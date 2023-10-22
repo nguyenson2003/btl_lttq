@@ -5,16 +5,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PlayerUI
+namespace SMPlayer
 {
     
     public partial class FormLogin : System.Windows.Forms.Form
     {
+        
         DataProcesser dtBase = new DataProcesser();
         Form form1;
         public FormLogin()
@@ -147,6 +149,9 @@ namespace PlayerUI
                 }
             }
         }
+
+
+
 
         private void btnLoginHidden_MouseUp(object sender, MouseEventArgs e)
         {

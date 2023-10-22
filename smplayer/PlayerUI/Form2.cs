@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PlayerUI
+namespace SMPlayer
 {
     public partial class Form2 : System.Windows.Forms.Form
     {

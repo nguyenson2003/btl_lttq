@@ -1,4 +1,4 @@
-﻿namespace PlayerUI
+﻿namespace SMPlayer
 {
     partial class Form3
     {
