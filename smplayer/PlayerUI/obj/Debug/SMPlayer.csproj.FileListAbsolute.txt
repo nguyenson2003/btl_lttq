@@ -17,3 +17,4 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form2.resource
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form3.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.FormLogin.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormPlayVideo.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowUser.resources

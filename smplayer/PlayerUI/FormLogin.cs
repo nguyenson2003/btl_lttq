@@ -93,25 +93,9 @@ namespace SMPlayer
                 tbLoginEmail.Text = tbLoginPassword.Text = "";
                 return;
             }
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(email);
-            if (match.Success)
-            {
-                if (true)
-                {
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Email or password is incorrect");
-                    return;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter a email");
-                return;
-            }
+           /*...*/
+            
+            
                 
         }
 
@@ -125,29 +109,7 @@ namespace SMPlayer
             string email = tbSignUpEmail.Text;
             string password = tbSignUpPassword.Text;
             string repeat= tbSignUpRepeat.Text;
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(email);
-            if (!match.Success)
-            {
-                MessageBox.Show("Please enter a email");
-                return;
-                
-            }
-            else
-            {
-                if (password!=repeat)
-                {
-                    MessageBox.Show("Password and repeat do not match");
-                    return;
-                }
-                else
-                {
-                    //check có acc chưa
-
-                    //them acc vào cơ sở dữ liệu
-                    tbSignUpEmail.Text = tbSignUpPassword.Text = tbSignUpRepeat.Text = "";
-                }
-            }
+            /*...*/
         }
 
 

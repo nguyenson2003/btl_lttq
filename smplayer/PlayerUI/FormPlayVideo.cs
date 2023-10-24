@@ -3,48 +3,41 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PlayerUI
 {
     public partial class FormPlayVideo : Form
     {
-
+        string path;
+        string[] paths;
         public FormPlayVideo()
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Multiselect = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                paths = ofd.FileNames;
+            }
             InitializeComponent();
-        }
-        string[] paths, files;
-
-        private void trackList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*timer1.Start();
-            player.URL = paths[trackList.SelectedIndex];
-            player.Ctlcontrols.play();*/
-        }
-
-        private void btnPlayVideo_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.play();
-        }
-
-        private void btnPause_Click(object sender, EventArgs e)
-        {
-            player.Ctlcontrols.pause();
+            path = paths[0];
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                player.fullScreen = true;
-                /*progressBar1.Maximum = (int)(player.Ctlcontrols.currentItem.duration * 100000);
-                progressBar1.Value = (int)(player.Ctlcontrols.currentPosition * 100000);
-                label1.Text = player.Ctlcontrols.currentPositionString;
-                label2.Text = player.Ctlcontrols.currentItem.durationString;*/
+
+                pbTrackVideo.Maximum = (int)(player.Ctlcontrols.currentItem.duration * 100000);
+                pbTrackVideo.Value = (int)(player.Ctlcontrols.currentPosition * 100000);
+                lbTrack.Text = player.Ctlcontrols.currentPositionString + "/" +
+                    player.Ctlcontrols.currentItem.durationString;
             }
         }
 
@@ -56,41 +49,16 @@ namespace PlayerUI
 
         private void FormPlayVideo_Load(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = true;
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                files = ofd.SafeFileNames;
-                paths = ofd.FileNames;
-            }
             player.uiMode = "None";
-            
-            player.URL = paths[0];
+            player.URL = path;
             player.Ctlcontrols.play();
+            btnPlay.Image = btnPlayState.Image;
+            pbVolume.Value = player.settings.volume = 100;
+            lbVolume.Text = "100%";
+            player.fullScreen=player.enableContextMenu = false;
+            tbKeyPress.TabIndex = 0;
+            tbKeyPress.Select();  
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            player.fullScreen = player.fullScreen^true;
-        }
-
-        private void player_MouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)
-        {
-            player.enableContextMenu = false;
-            
-        }
-        int HOPGB = 12;/*Hight of progress bar*/
-        private void progressBar1_MouseEnter(object sender, EventArgs e)
-        {
-            progressBar1.Size = new Size(progressBar1.Width, HOPGB);
-            progressBar1.Location= new Point(progressBar1.Location.X, progressBar1.Location.Y- HOPGB/2);
-        }
-
-        private void progressBar1_MouseLeave(object sender, EventArgs e)
-        {
-            progressBar1.Size = new Size(progressBar1.Width, 2);
-            progressBar1.Location = new Point(progressBar1.Location.X, progressBar1.Location.Y + HOPGB / 2);
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -104,6 +72,143 @@ namespace PlayerUI
                     trackList.Items.Add(files[i]);
             }*/
 
+        }
+        private void changePlayState()
+        {
+            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                player.Ctlcontrols.pause();
+                btnPlay.Image = btnPauseState.Image;
+            } else
+            {
+                player.Ctlcontrols.play();
+                btnPlay.Image = btnPlayState.Image;
+            }
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            changePlayState();
+        }
+
+        private void pbTrackVideo_MouseClick(object sender, MouseEventArgs e)
+        {
+            player.Ctlcontrols.currentPosition = player.currentMedia.duration * 
+                    e.X / pbTrackVideo.Width;
+        }
+
+        private void pbVolume_MouseClick(object sender, MouseEventArgs e)
+        {
+            pbVolume.Value = player.settings.volume = e.X * 100 / pbVolume.Width;
+            lbVolume.Text = pbVolume.Value.ToString() + "%";
+        }
+        private void changeWindowState()
+        {
+            if (this.WindowState == FormWindowState.Maximized&&this.FormBorderStyle==FormBorderStyle.None)
+            {
+                btnFullScreen.Image = btnFullScreenState.Image;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                btnFullScreen.Image = btnNomalScreenState.Image;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Normal;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            changeWindowState();
+
+        }
+
+        private void btnKeyPress_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                pbVolume.Value = player.settings.volume = Math.Min(player.settings.volume + 5, 100);
+                lbVolume.Text = pbVolume.Value.ToString() + "%";
+            } else if (e.KeyCode == Keys.Down)
+            {
+                pbVolume.Value = player.settings.volume = Math.Max(player.settings.volume - 5, 0);
+                lbVolume.Text = pbVolume.Value.ToString() + "%";
+            } else if (e.KeyCode == Keys.Left)
+            {
+                player.Ctlcontrols.currentPosition = Math.Max(player.Ctlcontrols.currentPosition - 5, 0);
+            } else if (e.KeyCode == Keys.Right)
+            {
+                player.Ctlcontrols.currentPosition = Math.Min(player.Ctlcontrols.currentPosition +5
+                    , player.currentMedia.duration) ;
+            }else if (e.KeyCode == Keys.Z)
+            {
+                speedPlayer -= 0.25;
+                if (speedPlayer < 0.25)
+                    speedPlayer = 2;
+                player.settings.rate = speedPlayer;
+                lbSpeed.Text = speedPlayer.ToString() + "X";
+            }else if (e.KeyCode == Keys.X)
+            {
+                speedPlayer += 0.25;
+                if (speedPlayer > 2)
+                    speedPlayer = 0.25;
+                player.settings.rate = speedPlayer;
+                lbSpeed.Text = speedPlayer.ToString() + "X";
+            }
+            e.Handled = true;
+        }
+        double speedPlayer = 1;
+        private void lbSpeed_Click(object sender, EventArgs e)
+        {
+            speedPlayer += 0.25;
+            if (speedPlayer > 2)
+                speedPlayer = 0.25;
+            player.settings.rate = speedPlayer;
+            lbSpeed.Text = speedPlayer.ToString() + "X"; 
+            
+        }
+
+        private void player_KeyDownEvent(object sender, AxWMPLib._WMPOCXEvents_KeyDownEvent e)
+        {
+            if (e.Equals(Keys.Up))
+            {
+                pbVolume.Value = player.settings.volume = Math.Min(player.settings.volume + 5, 100);
+                lbVolume.Text = pbVolume.Value.ToString() + "%";
+            }
+            else if (e.Equals(Keys.Down))
+            {
+                pbVolume.Value = player.settings.volume = Math.Max(player.settings.volume - 5, 0);
+                lbVolume.Text = pbVolume.Value.ToString() + "%";
+            }
+            else if (e.Equals(Keys.Left))
+            {
+                player.Ctlcontrols.currentPosition = Math.Max(player.Ctlcontrols.currentPosition - 5, 0);
+            }
+            else if (e.Equals(Keys.Right))
+            {
+                player.Ctlcontrols.currentPosition = Math.Min(player.Ctlcontrols.currentPosition + 5
+                    , player.currentMedia.duration);
+            }
+        }
+
+        private void player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (player.playState != WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                btnPlay.Image = btnPauseState.Image;
+            }
+            else
+            {
+                btnPlay.Image = btnPlayState.Image;
+            }
+        }
+
+        private void player_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+            changePlayState();
+            tbKeyPress.Select();
         }
     }
 }

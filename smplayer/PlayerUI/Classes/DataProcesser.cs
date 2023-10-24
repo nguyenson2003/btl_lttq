@@ -10,43 +10,43 @@ namespace QLBanHang.Classes
 {
     internal class DataProcesser
     {
-        string strConnect = "Data Source=DESKTOP-1CHI5GD\\SQLEXPRESS;Initial " +
-            "Catalog=[LTTQ_BTL_SMPlayer];Integrated Security=True";
-        SqlConnection sqlCnn = null;
+        string strConnect = "Data Source=DESKTOP-1CHI5GD\\SQLEXPRESS;Initial Catalog=LTTQ_BTL_SMPlayer;Integrated Security=True";
+        SqlConnection sqlConnect = null;
         //Hàm mở kết nối
-        void OpenConnect()
+        private void KetNoiCSDL()
         {
-            sqlCnn = new SqlConnection(strConnect);
-            if (sqlCnn.State != ConnectionState.Open)
-                sqlCnn.Open();
+            sqlConnect = new SqlConnection(strConnect);
+            if (sqlConnect.State != ConnectionState.Open)
+                sqlConnect.Open();
         }
         //Hàm đóng kết nối
-        void CloseConnect()
+        private void DongKetNoiCSDL()
         {
-            if (sqlCnn.State != ConnectionState.Closed)
-                sqlCnn.Close();
-            sqlCnn.Dispose();//dọn rác
+            if (sqlConnect.State != ConnectionState.Closed)
+                sqlConnect.Close();
+            sqlConnect.Dispose();
         }
-        //Hàm thưc hiện lệnh insert,update, delete
-        public void ChangeData(string sql)
+        //Hàm thực thi câu lệnh dạng Select trả về một DataTable
+        public DataTable DocBang(string sql)
         {
-            OpenConnect();
-            SqlCommand command = new SqlCommand();
-            command.Connection = sqlCnn;
-            command.CommandText = sql;
-            command.ExecuteNonQuery();
-            CloseConnect();
+            DataTable dtBang = new DataTable();
+            KetNoiCSDL();
+            SqlDataAdapter sqldataAdapte = new SqlDataAdapter(sql, sqlConnect);
+            sqldataAdapte.Fill(dtBang);
+            DongKetNoiCSDL();
+            return dtBang;
+        }
 
-        }
-        //Hàm đọc dl
-        public DataTable ReadData(string sqlSelect)
+        //Hàm thực lệnh insert hoặc update hoặc delete
+        public void CapNhatDuLieu(string sql)
         {
-            DataTable dt = new DataTable();
-            OpenConnect();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlSelect, sqlCnn);
-            adapter.Fill(dt);
-            CloseConnect();
-            return dt;
+            KetNoiCSDL();
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = sqlConnect;
+            sqlcommand.CommandText = sql;
+            sqlcommand.ExecuteNonQuery();
+            DongKetNoiCSDL();
+            sqlcommand.Dispose();
         }
 
     }

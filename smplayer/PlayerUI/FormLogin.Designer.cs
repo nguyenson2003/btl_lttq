@@ -260,9 +260,9 @@
             this.label3.Location = new System.Drawing.Point(89, 15);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 25);
+            this.label3.Size = new System.Drawing.Size(102, 25);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Email";
+            this.label3.Text = "Username";
             // 
             // tbSignUpEmail
             // 
@@ -541,9 +541,9 @@
             this.label7.Location = new System.Drawing.Point(89, 15);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 25);
+            this.label7.Size = new System.Drawing.Size(102, 25);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Email";
+            this.label7.Text = "Username";
             // 
             // tbLoginEmail
             // 
