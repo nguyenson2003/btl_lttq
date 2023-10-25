@@ -9,28 +9,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PlayerUI
 {
     public partial class FormShowUser : System.Windows.Forms.Form
     {
-        FormLogin formLogin;
+        FormAdmin formAdmin;
         bool isConnected = true;
         DataProcesser dtBase = new DataProcesser();
-        public FormShowUser()
+        public FormShowUser(FormAdmin f)
         {
             InitializeComponent();
-        }
-        public FormShowUser(FormLogin formLogin)
-        {
-            InitializeComponent();
-            this.formLogin = formLogin;
+            this.formAdmin = f;
         }
         private void FormShowUser_Load(object sender, EventArgs e)
         {
             try
             {
                 dgvUser.DataSource = dtBase.DocBang("select * from tblUser");
+                dgvUser.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             }catch (Exception ex)
             {
                 isConnected = false;
@@ -80,7 +78,7 @@ namespace PlayerUI
                 if (dtUser.Rows.Count == 0)
                 {
                     dtBase.CapNhatDuLieu("insert into tblUser values(N'"+
-                        tbUserName.Text+"', N'"+tbPassword.Text+"', N'"+tbFullName.Text +"',1)");
+                        tbUserName.Text+"', N'"+tbPassword.Text+"', N'"+tbFullName.Text +"',1,0)");
                     dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
                 }
                 else
@@ -97,6 +95,27 @@ namespace PlayerUI
             if (!isConnected)
             {
                 MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                return;
+            }
+            DataTable dtUser;
+            try
+            {
+                dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
+                    + tbUserName.Text + "' and Password=N'" + tbPassword.Text + "'");
+            }
+            catch
+            {
+                MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                return;
+            }
+            if (dtUser.Rows.Count == 0)
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+                return;
+            }
+            else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
+            {
+                MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
                 return;
             }
             dtBase.CapNhatDuLieu("update tblUser set Enable=0 where tblUser.UserName=N'" +
@@ -141,10 +160,40 @@ namespace PlayerUI
                 MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
                 return;
             }
+            DataTable dtUser;
+            try
+            {
+                dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
+                    + tbUserName.Text + "' and Password=N'" + tbPassword.Text + "'");
+            }
+            catch
+            {
+                MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                return;
+            }
+            if (dtUser.Rows.Count == 0)
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+                return;
+            }
+            else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
+            {
+                MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
+                return;
+            }
             dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
-            ClearData();
-            formLogin = new FormLogin(tbUserName.Text,tbPassword.Text);
-            formLogin.ShowDialog();
+            if (dtUser.Select()[0]["Enable"].ToString() != "0"){
+                dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'" + tbUserName.Text + "'");
+                formAdmin.formUser = new FormUser(tbUserName.Text, tbPassword.Text, 1, formAdmin.formLogin);
+                formAdmin.formUser.ShowDialog();
+            }       
+            else
+                MessageBox.Show("Tài khoản này không khả dụng");
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
         }
     }
 }

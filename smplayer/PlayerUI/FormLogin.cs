@@ -21,9 +21,12 @@ namespace SMPlayer
         string initUserName,initPassword;
         DataProcesser dtBase = new DataProcesser();
         bool isConnect = true;
-        FormAdmin formAdmin;
+        public FormAdmin formAdmin;
+        public FormUser formUser;
         public FormLogin()
         {
+            formAdmin = null;
+            formUser=null;
             InitializeComponent();
         }
         public FormLogin(string us,string pw)
@@ -111,31 +114,40 @@ namespace SMPlayer
                 DataTable dtUser;
                 try
                 {
-                    dtUser = dtBase.DocBang("Select isOnline from tblUser where UserName='"
-                        + username + "'");
+                    dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
+                        + username + "' and Password=N'"+password+"'");
                 }
                 catch
                 {
                     MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
                     return;
                 }
-                
-                if (dtUser.Select()[0]["isOnline"].ToString()=="1")
+                if (dtUser.Rows.Count == 0)
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác");
+                }
+                else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
                 {
                     MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
                 }
-                else{
+                else if (dtUser.Select()[0]["Enable"].ToString() == "0") {
+                    MessageBox.Show("Tài khoản không khả dụng");
+                }else
+                {
                     dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'"+username+"'");
-                    if (password == "123" && username == "admin")
+                    if (password == "123" && username.ToLower() == "admin")
                     {
                         formAdmin = new FormAdmin(this);
-                        formAdmin.Show();  
+                        formAdmin.Show(); 
+                        this.Hide();
                     }else
                     {
-                        new FormUser(tbLoginUserName.Text, tbLoginPassword.Text).Show();
+                        formUser = new FormUser(tbLoginUserName.Text, tbLoginPassword.Text, 0, this);
+                        formUser.Show();  
+                        this.Hide();
                     }
                     tbLoginUserName.Text = tbLoginPassword.Text = "";
-                    this.Hide();
+                    
                 }
             }
             
@@ -154,6 +166,23 @@ namespace SMPlayer
                 tbLoginPassword.Text = initPassword;
             }
             
+        }
+
+        private void tbLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+                btnLogin_Click(sender, e);
+        }
+
+        private void tbSignUp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSignUp_Click(sender, e);
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -199,9 +228,14 @@ namespace SMPlayer
                 }
                 else
                 {
-                    dtBase.CapNhatDuLieu("update tblUser set PassWord=N'" + tbSignUpPassword.Text + "',FullName=N'"
-                    + tbSignUpUserName.Text + "',Enable=1 where tblUser.UserName=N'" + tbSignUpUserName.Text + "'");
-                    MessageBox.Show("Tạo tài khoản thành công");
+                    dtBase.CapNhatDuLieu("insert into tblUser values(N'"+tbSignUpUserName.Text+"',N'"+
+                        tbSignUpPassword.Text+"',N'"+tbSignUpUserName.Text+"',1,0)");
+                    dtUser = dtBase.DocBang("Select * from tblUser where UserName='"
+                                            + tbSignUpUserName.Text + "'");
+                    if (dtUser.Rows.Count != 0)
+                        MessageBox.Show("Tạo tài khoản thành công");
+                    else
+                        MessageBox.Show("Tạo tài khoản không thành công");
                     tbLoginUserName.Text= tbSignUpUserName.Text;
                     tbLoginPassword.Text= tbSignUpPassword.Text;
                     tbLoginUserName.Select();

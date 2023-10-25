@@ -44,6 +44,7 @@
             this.tbEnable = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,10 +52,14 @@
             // 
             // dgvUser
             // 
+            this.dgvUser.BackgroundColor = System.Drawing.Color.Black;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUser.GridColor = System.Drawing.Color.Black;
             this.dgvUser.Location = new System.Drawing.Point(0, 74);
+            this.dgvUser.MultiSelect = false;
             this.dgvUser.Name = "dgvUser";
+            this.dgvUser.ReadOnly = true;
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
             this.dgvUser.Size = new System.Drawing.Size(818, 469);
@@ -108,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 34);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 2;
@@ -116,7 +121,7 @@
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(113, 28);
+            this.tbUserName.Location = new System.Drawing.Point(83, 3);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(108, 22);
             this.tbUserName.TabIndex = 3;
@@ -124,7 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 34);
+            this.label2.Location = new System.Drawing.Point(12, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;
@@ -132,7 +137,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(316, 28);
+            this.tbPassword.Location = new System.Drawing.Point(83, 34);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(108, 22);
             this.tbPassword.TabIndex = 3;
@@ -140,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(445, 34);
+            this.label3.Location = new System.Drawing.Point(220, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 2;
@@ -148,7 +153,7 @@
             // 
             // tbFullName
             // 
-            this.tbFullName.Location = new System.Drawing.Point(516, 28);
+            this.tbFullName.Location = new System.Drawing.Point(291, 6);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(108, 22);
             this.tbFullName.TabIndex = 3;
@@ -171,7 +176,7 @@
             // 
             // tbEnable
             // 
-            this.tbEnable.Location = new System.Drawing.Point(710, 28);
+            this.tbEnable.Location = new System.Drawing.Point(291, 34);
             this.tbEnable.Name = "tbEnable";
             this.tbEnable.Size = new System.Drawing.Size(108, 22);
             this.tbEnable.TabIndex = 5;
@@ -179,7 +184,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(639, 34);
+            this.label4.Location = new System.Drawing.Point(220, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 4;
@@ -190,12 +195,24 @@
             this.panel2.Controls.Add(this.btnAddUser);
             this.panel2.Controls.Add(this.btnDeleteUser);
             this.panel2.Controls.Add(this.btnEditUser);
+            this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.btnLoginUser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(818, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(172, 469);
             this.panel2.TabIndex = 5;
+            // 
+            // btnReset
+            // 
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Location = new System.Drawing.Point(19, 265);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(112, 55);
+            this.btnReset.TabIndex = 1;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FormShowUser
             // 
@@ -209,6 +226,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormShowUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormShowUser";
             this.Load += new System.EventHandler(this.FormShowUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
@@ -236,5 +254,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbEnable;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReset;
     }
 }

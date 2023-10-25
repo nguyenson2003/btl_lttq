@@ -16,8 +16,12 @@ namespace PlayerUI
     {
         DataProcesser dtBase = new DataProcesser();
         string UserName, Password;
-        public FormUser(string us,string pw)
+        int isAdmin = 0;
+        FormLogin formLogin;
+        public FormUser(string us,string pw,int isAdmin,FormLogin f)
         {
+            formLogin = f;
+            this.isAdmin = isAdmin;
             UserName = us;
             Password = pw;
             InitializeComponent();
@@ -43,7 +47,7 @@ namespace PlayerUI
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormShowUser());
+
             showSubMenu(panelMediaSubMenu);
         }
 
@@ -178,7 +182,10 @@ namespace PlayerUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'"+UserName+"'");
-            this.Close();
+
+            if (isAdmin == 0)
+                formLogin.Show();
+            this.Hide();
         }
         private System.Windows.Forms.Form activeForm = null;
 
@@ -186,8 +193,22 @@ namespace PlayerUI
         {
             DataTable dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
                         + UserName + "'");
-
+            try
+            {
             lbHello.Text = dtUser.Select()[0]["FullName"].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("looix ow dday");
+            }
+            
+        }
+
+        private void FormUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'"+UserName+"'");
+            if (isAdmin == 0)
+                Application.Exit();
         }
 
         private void openChildForm(System.Windows.Forms.Form childForm)

@@ -264,7 +264,7 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Username";
             // 
-            // tbSignUpEmail
+            // tbSignUpUserName
             // 
             this.tbSignUpUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbSignUpUserName.BackColor = System.Drawing.Color.Black;
@@ -272,9 +272,10 @@
             this.tbSignUpUserName.ForeColor = System.Drawing.Color.White;
             this.tbSignUpUserName.Location = new System.Drawing.Point(274, 15);
             this.tbSignUpUserName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSignUpUserName.Name = "tbSignUpEmail";
+            this.tbSignUpUserName.Name = "tbSignUpUserName";
             this.tbSignUpUserName.Size = new System.Drawing.Size(269, 23);
             this.tbSignUpUserName.TabIndex = 1;
+            this.tbSignUpUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSignUp_KeyDown);
             // 
             // panel7
             // 
@@ -343,6 +344,7 @@
             this.tbSignUpRepeat.PasswordChar = '*';
             this.tbSignUpRepeat.Size = new System.Drawing.Size(269, 23);
             this.tbSignUpRepeat.TabIndex = 3;
+            this.tbSignUpRepeat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSignUp_KeyDown);
             // 
             // label6
             // 
@@ -401,6 +403,7 @@
             this.tbSignUpPassword.PasswordChar = '*';
             this.tbSignUpPassword.Size = new System.Drawing.Size(269, 23);
             this.tbSignUpPassword.TabIndex = 2;
+            this.tbSignUpPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSignUp_KeyDown);
             // 
             // label1
             // 
@@ -545,7 +548,7 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Username";
             // 
-            // tbLoginEmail
+            // tbLoginUserName
             // 
             this.tbLoginUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbLoginUserName.BackColor = System.Drawing.Color.Black;
@@ -553,9 +556,10 @@
             this.tbLoginUserName.ForeColor = System.Drawing.Color.White;
             this.tbLoginUserName.Location = new System.Drawing.Point(274, 15);
             this.tbLoginUserName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbLoginUserName.Name = "tbLoginEmail";
+            this.tbLoginUserName.Name = "tbLoginUserName";
             this.tbLoginUserName.Size = new System.Drawing.Size(269, 23);
             this.tbLoginUserName.TabIndex = 1;
+            this.tbLoginUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbLogin_KeyDown);
             // 
             // panel12
             // 
@@ -615,6 +619,7 @@
             this.tbLoginPassword.PasswordChar = '*';
             this.tbLoginPassword.Size = new System.Drawing.Size(269, 23);
             this.tbLoginPassword.TabIndex = 2;
+            this.tbLoginPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbLogin_KeyDown);
             // 
             // label8
             // 
@@ -715,6 +720,7 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMPlayer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

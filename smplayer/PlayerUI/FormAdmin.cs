@@ -15,16 +15,12 @@ namespace SMPlayer
 {
     public partial class FormAdmin : System.Windows.Forms.Form
     {
-        FormLogin formLogin;
         DataProcesser dtBase = new DataProcesser();
-        public FormAdmin(FormLogin formLogin)
+        public FormLogin formLogin;
+        public FormUser formUser;
+        public FormAdmin(FormLogin f)
         {
-            InitializeComponent();
-            hideSubMenu();
-            this.formLogin = formLogin;
-        }
-        public FormAdmin()
-        {
+            formLogin = f;
             InitializeComponent();
             hideSubMenu();
         }
@@ -48,7 +44,7 @@ namespace SMPlayer
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormShowUser());
+            openChildForm(new FormShowUser(this));
             showSubMenu(panelMediaSubMenu);
         }
 
@@ -205,6 +201,7 @@ namespace SMPlayer
         private void FormAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'admin'");
+            Application.Exit();
         }
     }
 }
