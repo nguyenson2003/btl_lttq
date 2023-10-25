@@ -18,6 +18,7 @@ namespace SMPlayer
         DataProcesser dtBase = new DataProcesser();
         public FormLogin formLogin;
         public FormUser formUser;
+        private System.Windows.Forms.Form activeForm = null;
         public FormAdmin(FormLogin f)
         {
             formLogin = f;
@@ -26,7 +27,7 @@ namespace SMPlayer
         }
             private void hideSubMenu()
         {
-            panelMediaSubMenu.Visible = false;
+            //panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
         }
@@ -45,7 +46,7 @@ namespace SMPlayer
         private void btnUser_Click(object sender, EventArgs e)
         {
             openChildForm(new FormShowUser(this));
-            showSubMenu(panelMediaSubMenu);
+            //showSubMenu(panelMediaSubMenu);
         }
 
         #region MediaSubMenu
@@ -183,7 +184,7 @@ namespace SMPlayer
             this.Hide();
         }
 
-        private System.Windows.Forms.Form activeForm = null;
+        
         private void openChildForm(System.Windows.Forms.Form childForm)
         {
             if (activeForm != null) activeForm.Close();
@@ -202,6 +203,12 @@ namespace SMPlayer
         {
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'admin'");
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(activeForm != null) activeForm.Close();
+            
         }
     }
 }

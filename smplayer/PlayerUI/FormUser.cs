@@ -195,13 +195,12 @@ namespace PlayerUI
                         + UserName + "'");
             try
             {
-            lbHello.Text = dtUser.Select()[0]["FullName"].ToString();
+            lbHello.Text ="Hello "+ dtUser.Select()[0]["FullName"].ToString();
             }
             catch
             {
                 MessageBox.Show("looix ow dday");
             }
-            
         }
 
         private void FormUser_FormClosed(object sender, FormClosedEventArgs e)

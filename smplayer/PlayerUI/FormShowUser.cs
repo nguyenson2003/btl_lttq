@@ -47,7 +47,7 @@ namespace PlayerUI
             tbUserName.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
             tbPassword.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
             tbFullName.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
-            tbEnable.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace PlayerUI
             }
             else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
             {
-                MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
+                MessageBox.Show("Tài khoản đang được đăng nhập");
                 return;
             }
             dtBase.CapNhatDuLieu("update tblUser set Enable=0 where tblUser.UserName=N'" +
@@ -126,7 +126,7 @@ namespace PlayerUI
         }
         private void ClearData()
         {
-            tbEnable.Text = tbFullName.Text = tbPassword.Text = tbUserName.Text = "";
+            tbFullName.Text = tbPassword.Text = tbUserName.Text = "";
         }
         private void btnEditUser_Click(object sender, EventArgs e)
         {
@@ -135,21 +135,35 @@ namespace PlayerUI
                 MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
                 return;
             }
-            DataTable dtUser = dtBase.DocBang("Select * from tblUser where UserName='"
-                        + tbUserName.Text + "'");
+            DataTable dtUser;
+            try
+            {
+                dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
+                    + tbUserName.Text + "' and Password=N'" + tbPassword.Text + "'");
+            }
+            catch
+            {
+                MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                return;
+            }
             if (dtUser.Rows.Count == 0)
             {
-                dtBase.CapNhatDuLieu("update tblUser set PassWord=N'" + tbPassword.Text + "',FullName=N'"
-                + tbFullName.Text + "',Enable=1 where tblUser.UserName=N'" + tbUserName.Text + "'");
-                dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
-                ClearData();
-                MessageBox.Show("Cập nhập thành công");
-            }
-            else
-            {
-                MessageBox.Show("Tên đăng nhập này đã tồn tại. Bạn phải nhập tên khác");
+                MessageBox.Show("Tên đăng nhập này không tồn tại");
                 tbUserName.Focus();
+                return;
             }
+            else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
+            {
+                MessageBox.Show("Tài khoản đang được đăng nhập");
+                return;
+            }
+           
+            dtBase.CapNhatDuLieu("update tblUser set PassWord=N'" + tbPassword.Text + "',FullName=N'"
+            + tbFullName.Text + "',Enable=1 where tblUser.UserName=N'" + tbUserName.Text + "'");
+            dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
+            ClearData();
+            MessageBox.Show("Cập nhập thành công");
+            
             
         }
 
@@ -178,12 +192,15 @@ namespace PlayerUI
             }
             else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
             {
-                MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
+                MessageBox.Show("Tài khoản đang được đăng nhập");
                 return;
             }
             dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
             if (dtUser.Select()[0]["Enable"].ToString() != "0"){
                 dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'" + tbUserName.Text + "'");
+                dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
+                if (formAdmin.formUser != null) 
+                    formAdmin.formUser.Close();
                 formAdmin.formUser = new FormUser(tbUserName.Text, tbPassword.Text, 1, formAdmin.formLogin);
                 formAdmin.formUser.ShowDialog();
             }       
@@ -191,9 +208,11 @@ namespace PlayerUI
                 MessageBox.Show("Tài khoản này không khả dụng");
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
+            timer1.Interval = 1000;
+            if(isConnected)
+                dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
         }
     }
 }

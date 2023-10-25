@@ -128,7 +128,7 @@ namespace SMPlayer
                 }
                 else if (dtUser.Select()[0]["isOnline"].ToString() == "1")
                 {
-                    MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
+                    MessageBox.Show("Tài khoản đang được đăng nhập");
                 }
                 else if (dtUser.Select()[0]["Enable"].ToString() == "0") {
                     MessageBox.Show("Tài khoản không khả dụng");
@@ -137,11 +137,13 @@ namespace SMPlayer
                     dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'"+username+"'");
                     if (password == "123" && username.ToLower() == "admin")
                     {
+                        if (formAdmin != null) formAdmin.Close();
                         formAdmin = new FormAdmin(this);
                         formAdmin.Show(); 
                         this.Hide();
                     }else
                     {
+                        if (formUser != null) formUser.Close();
                         formUser = new FormUser(tbLoginUserName.Text, tbLoginPassword.Text, 0, this);
                         formUser.Show();  
                         this.Hide();

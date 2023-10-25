@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShowUser));
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
-            this.btnLoginUser = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
@@ -41,10 +41,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbFullName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbEnable = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLoginUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,17 +87,6 @@
             this.btnDeleteUser.UseVisualStyleBackColor = true;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // btnLoginUser
-            // 
-            this.btnLoginUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoginUser.Location = new System.Drawing.Point(19, 204);
-            this.btnLoginUser.Name = "btnLoginUser";
-            this.btnLoginUser.Size = new System.Drawing.Size(112, 55);
-            this.btnLoginUser.TabIndex = 1;
-            this.btnLoginUser.Text = "Login As User";
-            this.btnLoginUser.UseVisualStyleBackColor = true;
-            this.btnLoginUser.Click += new System.EventHandler(this.btnLoginUser_Click);
-            // 
             // btnEditUser
             // 
             this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(36, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 2;
@@ -121,7 +109,7 @@
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(83, 3);
+            this.tbUserName.Location = new System.Drawing.Point(119, 12);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(108, 22);
             this.tbUserName.TabIndex = 3;
@@ -129,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 40);
+            this.label2.Location = new System.Drawing.Point(361, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;
@@ -137,7 +125,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(83, 34);
+            this.tbPassword.Location = new System.Drawing.Point(441, 12);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(108, 22);
             this.tbPassword.TabIndex = 3;
@@ -145,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(220, 12);
+            this.label3.Location = new System.Drawing.Point(38, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 2;
@@ -153,15 +141,13 @@
             // 
             // tbFullName
             // 
-            this.tbFullName.Location = new System.Drawing.Point(291, 6);
+            this.tbFullName.Location = new System.Drawing.Point(119, 40);
             this.tbFullName.Name = "tbFullName";
-            this.tbFullName.Size = new System.Drawing.Size(108, 22);
+            this.tbFullName.Size = new System.Drawing.Size(188, 22);
             this.tbFullName.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tbEnable);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.tbPassword);
             this.panel1.Controls.Add(this.tbFullName);
             this.panel1.Controls.Add(this.label1);
@@ -174,28 +160,11 @@
             this.panel1.Size = new System.Drawing.Size(990, 74);
             this.panel1.TabIndex = 4;
             // 
-            // tbEnable
-            // 
-            this.tbEnable.Location = new System.Drawing.Point(291, 34);
-            this.tbEnable.Name = "tbEnable";
-            this.tbEnable.Size = new System.Drawing.Size(108, 22);
-            this.tbEnable.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Enable";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnAddUser);
             this.panel2.Controls.Add(this.btnDeleteUser);
             this.panel2.Controls.Add(this.btnEditUser);
-            this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.btnLoginUser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(818, 74);
@@ -203,16 +172,22 @@
             this.panel2.Size = new System.Drawing.Size(172, 469);
             this.panel2.TabIndex = 5;
             // 
-            // btnReset
+            // timer1
             // 
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Location = new System.Drawing.Point(19, 265);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(112, 55);
-            this.btnReset.TabIndex = 1;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnLoginUser
+            // 
+            this.btnLoginUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginUser.Location = new System.Drawing.Point(19, 204);
+            this.btnLoginUser.Name = "btnLoginUser";
+            this.btnLoginUser.Size = new System.Drawing.Size(112, 55);
+            this.btnLoginUser.TabIndex = 1;
+            this.btnLoginUser.Text = "Login As User";
+            this.btnLoginUser.UseVisualStyleBackColor = true;
+            this.btnLoginUser.Click += new System.EventHandler(this.btnLoginUser_Click);
             // 
             // FormShowUser
             // 
@@ -242,7 +217,6 @@
         private System.Windows.Forms.DataGridView dgvUser;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnDeleteUser;
-        private System.Windows.Forms.Button btnLoginUser;
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbUserName;
@@ -252,8 +226,7 @@
         private System.Windows.Forms.TextBox tbFullName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbEnable;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnLoginUser;
     }
 }
