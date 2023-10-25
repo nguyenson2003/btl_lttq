@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLBanHang.Classes;
+using SMPlayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,23 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SMPlayer
+namespace PlayerUI
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class FormUser : Form
     {
-        FormLogin formLogin;
-        public Form(FormLogin formLogin)
+        DataProcesser dtBase = new DataProcesser();
+        string UserName, Password;
+        public FormUser(string us,string pw)
         {
-            InitializeComponent();
-            hideSubMenu();
-            this.formLogin = formLogin;
-        }
-        public Form()
-        {
+            UserName = us;
+            Password = pw;
             InitializeComponent();
             hideSubMenu();
         }
-            private void hideSubMenu()
+        private void hideSubMenu()
         {
             panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
@@ -42,8 +41,9 @@ namespace SMPlayer
                 subMenu.Visible = false;
         }
 
-        private void btnMedia_Click(object sender, EventArgs e)
+        private void btnUser_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormShowUser());
             showSubMenu(panelMediaSubMenu);
         }
 
@@ -177,15 +177,24 @@ namespace SMPlayer
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            formLogin.Show();
-            this.Hide();
+            dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'"+UserName+"'");
+            this.Close();
+        }
+        private System.Windows.Forms.Form activeForm = null;
+
+        private void FormUser_Load(object sender, EventArgs e)
+        {
+            DataTable dtUser = dtBase.DocBang("Select * from tblUser where UserName=N'"
+                        + UserName + "'");
+
+            lbHello.Text = dtUser.Select()[0]["FullName"].ToString();
         }
 
-        private System.Windows.Forms.Form activeForm = null;
         private void openChildForm(System.Windows.Forms.Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
+            childForm.Size = panelChildForm.Size;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;

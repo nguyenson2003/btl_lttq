@@ -12,9 +12,10 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\bin\Debug\AxInterop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\Interop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\AxInterop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.csproj.ResolveComReference.cache
-D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form2.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form3.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.FormLogin.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormPlayVideo.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowUser.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.FormAdmin.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormUser.resources

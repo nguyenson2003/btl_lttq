@@ -1,6 +1,6 @@
 ﻿namespace SMPlayer
 {
-    partial class Form
+    partial class FormAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.btnEqualizer = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
-            this.btnEqualizer = new System.Windows.Forms.Button();
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnMedia = new System.Windows.Forms.Button();
+            this.btnUser = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -79,7 +79,7 @@
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
             this.panelSideMenu.Controls.Add(this.btnPlaylist);
             this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnMedia);
+            this.panelSideMenu.Controls.Add(this.btnUser);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
@@ -87,26 +87,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(322, 700);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(48)))), ((int)(((byte)(13)))));
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 890);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(301, 56);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "  Log out";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnHelp
             // 
@@ -127,6 +107,46 @@
             this.btnHelp.Text = "  Help";
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // btnEqualizer
+            // 
+            this.btnEqualizer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEqualizer.FlatAppearance.BorderSize = 0;
+            this.btnEqualizer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnEqualizer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnEqualizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEqualizer.ForeColor = System.Drawing.Color.White;
+            this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
+            this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 778);
+            this.btnEqualizer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEqualizer.Name = "btnEqualizer";
+            this.btnEqualizer.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEqualizer.Size = new System.Drawing.Size(301, 56);
+            this.btnEqualizer.TabIndex = 5;
+            this.btnEqualizer.Text = "Setting";
+            this.btnEqualizer.UseVisualStyleBackColor = true;
+            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(48)))), ((int)(((byte)(13)))));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(0, 890);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnExit.Size = new System.Drawing.Size(301, 56);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "  Log out";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panelToolsSubMenu
             // 
@@ -214,26 +234,6 @@
             this.btnTools.Text = "Video";
             this.btnTools.UseVisualStyleBackColor = true;
             this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
-            // 
-            // btnEqualizer
-            // 
-            this.btnEqualizer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEqualizer.FlatAppearance.BorderSize = 0;
-            this.btnEqualizer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.btnEqualizer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.btnEqualizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEqualizer.ForeColor = System.Drawing.Color.White;
-            this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
-            this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 778);
-            this.btnEqualizer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEqualizer.Name = "btnEqualizer";
-            this.btnEqualizer.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(301, 56);
-            this.btnEqualizer.TabIndex = 5;
-            this.btnEqualizer.Text = "Setting";
-            this.btnEqualizer.UseVisualStyleBackColor = true;
-            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // panelPlaylistSubMenu
             // 
@@ -427,25 +427,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnMedia
+            // btnUser
             // 
-            this.btnMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMedia.FlatAppearance.BorderSize = 0;
-            this.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedia.ForeColor = System.Drawing.Color.White;
-            this.btnMedia.Image = ((System.Drawing.Image)(resources.GetObject("btnMedia.Image")));
-            this.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.Location = new System.Drawing.Point(0, 115);
-            this.btnMedia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMedia.Name = "btnMedia";
-            this.btnMedia.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(301, 56);
-            this.btnMedia.TabIndex = 1;
-            this.btnMedia.Text = "User";
-            this.btnMedia.UseVisualStyleBackColor = true;
-            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
+            this.btnUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUser.FlatAppearance.BorderSize = 0;
+            this.btnUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUser.ForeColor = System.Drawing.Color.White;
+            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUser.Location = new System.Drawing.Point(0, 115);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnUser.Size = new System.Drawing.Size(301, 56);
+            this.btnUser.TabIndex = 1;
+            this.btnUser.Text = "User";
+            this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // panelLogo
             // 
@@ -512,7 +512,7 @@
             this.label4.Text = "Hello Minh";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form
+            // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -527,9 +527,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(1217, 747);
-            this.Name = "Form";
+            this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMPlayer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAdmin_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
@@ -553,7 +554,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnMedia;
+        private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel panelToolsSubMenu;
         private System.Windows.Forms.Button button10;

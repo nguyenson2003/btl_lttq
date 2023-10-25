@@ -1,4 +1,5 @@
-﻿using QLBanHang.Classes;
+﻿using PlayerUI;
+using QLBanHang.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,24 +18,33 @@ namespace SMPlayer
     
     public partial class FormLogin : System.Windows.Forms.Form
     {
-        
+        string initUserName,initPassword;
         DataProcesser dtBase = new DataProcesser();
-        Form form1;
+        bool isConnect = true;
+        FormAdmin formAdmin;
         public FormLogin()
         {
             InitializeComponent();
         }
-
+        public FormLogin(string us,string pw)
+        {
+            initUserName = us;
+            initPassword = pw;
+            InitializeComponent();
+        }
         private void linkLabel4_LinkSignUp(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            tbSignUpEmail.Select();
+            tbSignUpUserName.Text=tbSignUpPassword.Text=tbSignUpRepeat.Text="";
+            tbSignUpUserName.Select();
             pnSignUp.Visible = true;
             pnSignUp.BringToFront();
+
         }
 
         private void linkLabel2_LinkLogin(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            tbLoginEmail.Select();
+            tbLoginUserName.Text = tbLoginPassword.Text = "";
+            tbLoginUserName.Select();
             pnSignUp.Visible = false;
 
         }
@@ -83,16 +94,51 @@ namespace SMPlayer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = tbLoginEmail.Text;
+            string username = tbLoginUserName.Text;
             string password = tbLoginPassword.Text;
-            if (password == "123" && email == "admin")
+            if (username == "")
             {
-                form1 = new Form(this);
-                form1.Show();
-                this.Hide();
-                tbLoginEmail.Text = tbLoginPassword.Text = "";
-                return;
+                MessageBox.Show("Bạn phải nhập tên đăng nhập");
+                tbLoginUserName.Select();
             }
+            else if (password == "")
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu");
+                tbLoginPassword.Select();
+            }
+            else 
+            {
+                DataTable dtUser;
+                try
+                {
+                    dtUser = dtBase.DocBang("Select isOnline from tblUser where UserName='"
+                        + username + "'");
+                }
+                catch
+                {
+                    MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                    return;
+                }
+                
+                if (dtUser.Select()[0]["isOnline"].ToString()=="1")
+                {
+                    MessageBox.Show("Tài khoản đang được đăng nhập ở nơi khác");
+                }
+                else{
+                    dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'"+username+"'");
+                    if (password == "123" && username == "admin")
+                    {
+                        formAdmin = new FormAdmin(this);
+                        formAdmin.Show();  
+                    }else
+                    {
+                        new FormUser(tbLoginUserName.Text, tbLoginPassword.Text).Show();
+                    }
+                    tbLoginUserName.Text = tbLoginPassword.Text = "";
+                    this.Hide();
+                }
+            }
+            
            /*...*/
             
             
@@ -101,15 +147,68 @@ namespace SMPlayer
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            tbLoginEmail.Select();
+            tbLoginUserName.Select();
+            if (initUserName != null && initPassword != null)
+            {
+                tbLoginUserName.Text = initUserName;
+                tbLoginPassword.Text = initPassword;
+            }
+            
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            string email = tbSignUpEmail.Text;
+            string email = tbSignUpUserName.Text;
             string password = tbSignUpPassword.Text;
             string repeat= tbSignUpRepeat.Text;
-            /*...*/
+            if (email == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên đăng nhập");
+                tbSignUpUserName.Select();
+            }else if (password == "")
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu");
+                tbSignUpPassword.Select();
+            }else if (repeat == "")
+            {
+                MessageBox.Show("Bạn phải nhắc lại mật khẩu");
+                tbSignUpRepeat.Select();
+            }else if (password != repeat)
+            {
+                MessageBox.Show("Mật khẩu không khớp");
+                tbSignUpRepeat.Select();
+            }
+            else
+            {
+                DataTable dtUser;
+                try
+                {
+                    dtUser = dtBase.DocBang("Select * from tblUser where UserName='"
+                                            + tbSignUpUserName.Text + "'");
+                }
+                catch
+                {
+                    MessageBox.Show("Kết nối cơ sở dữ liệu không thành công");
+                    return;
+                }
+                
+                if (dtUser.Rows.Count != 0)
+                {
+                    MessageBox.Show("Tên đăng nhập này đã tồn tại. Bạn phải nhập tên khác");
+                    tbSignUpUserName.Focus();
+                }
+                else
+                {
+                    dtBase.CapNhatDuLieu("update tblUser set PassWord=N'" + tbSignUpPassword.Text + "',FullName=N'"
+                    + tbSignUpUserName.Text + "',Enable=1 where tblUser.UserName=N'" + tbSignUpUserName.Text + "'");
+                    MessageBox.Show("Tạo tài khoản thành công");
+                    tbLoginUserName.Text= tbSignUpUserName.Text;
+                    tbLoginPassword.Text= tbSignUpPassword.Text;
+                    tbLoginUserName.Select();
+                    pnSignUp.Visible = false;
+                }
+            }
+            
         }
 
 

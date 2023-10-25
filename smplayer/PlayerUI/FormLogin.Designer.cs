@@ -44,7 +44,7 @@
             this.btnSignUpHidden = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbSignUpEmail = new System.Windows.Forms.TextBox();
+            this.tbSignUpUserName = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.btnLoginHidden = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbLoginEmail = new System.Windows.Forms.TextBox();
+            this.tbLoginUserName = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -244,7 +244,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.tbSignUpEmail);
+            this.panel5.Controls.Add(this.tbSignUpUserName);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Location = new System.Drawing.Point(10, 211);
@@ -266,15 +266,15 @@
             // 
             // tbSignUpEmail
             // 
-            this.tbSignUpEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbSignUpEmail.BackColor = System.Drawing.Color.Black;
-            this.tbSignUpEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSignUpEmail.ForeColor = System.Drawing.Color.White;
-            this.tbSignUpEmail.Location = new System.Drawing.Point(274, 15);
-            this.tbSignUpEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.tbSignUpEmail.Name = "tbSignUpEmail";
-            this.tbSignUpEmail.Size = new System.Drawing.Size(269, 23);
-            this.tbSignUpEmail.TabIndex = 1;
+            this.tbSignUpUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbSignUpUserName.BackColor = System.Drawing.Color.Black;
+            this.tbSignUpUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSignUpUserName.ForeColor = System.Drawing.Color.White;
+            this.tbSignUpUserName.Location = new System.Drawing.Point(274, 15);
+            this.tbSignUpUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSignUpUserName.Name = "tbSignUpEmail";
+            this.tbSignUpUserName.Size = new System.Drawing.Size(269, 23);
+            this.tbSignUpUserName.TabIndex = 1;
             // 
             // panel7
             // 
@@ -525,7 +525,7 @@
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.tbLoginEmail);
+            this.panel8.Controls.Add(this.tbLoginUserName);
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.pictureBox5);
             this.panel8.Location = new System.Drawing.Point(10, 211);
@@ -547,15 +547,15 @@
             // 
             // tbLoginEmail
             // 
-            this.tbLoginEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbLoginEmail.BackColor = System.Drawing.Color.Black;
-            this.tbLoginEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbLoginEmail.ForeColor = System.Drawing.Color.White;
-            this.tbLoginEmail.Location = new System.Drawing.Point(274, 15);
-            this.tbLoginEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.tbLoginEmail.Name = "tbLoginEmail";
-            this.tbLoginEmail.Size = new System.Drawing.Size(269, 23);
-            this.tbLoginEmail.TabIndex = 1;
+            this.tbLoginUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbLoginUserName.BackColor = System.Drawing.Color.Black;
+            this.tbLoginUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbLoginUserName.ForeColor = System.Drawing.Color.White;
+            this.tbLoginUserName.Location = new System.Drawing.Point(274, 15);
+            this.tbLoginUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbLoginUserName.Name = "tbLoginEmail";
+            this.tbLoginUserName.Size = new System.Drawing.Size(269, 23);
+            this.tbLoginUserName.TabIndex = 1;
             // 
             // panel12
             // 
@@ -754,7 +754,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbLoginEmail;
+        private System.Windows.Forms.TextBox tbLoginUserName;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel11;
@@ -764,7 +764,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbSignUpEmail;
+        private System.Windows.Forms.TextBox tbSignUpUserName;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
