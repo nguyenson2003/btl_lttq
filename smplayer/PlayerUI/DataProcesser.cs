@@ -29,6 +29,7 @@ namespace QLBanHang.Classes
         //Hàm thực thi câu lệnh dạng Select trả về một DataTable
         public DataTable DocBang(string sql)
         {
+            if (sql == "") return new DataTable();
             DataTable dtBang = new DataTable();
             KetNoiCSDL();
             SqlDataAdapter sqldataAdapte = new SqlDataAdapter(sql, sqlConnect);

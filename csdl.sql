@@ -83,7 +83,7 @@ set isOnline=0
 where tblUser.UserName=N'admin'
 insert into tblUser
 values(N'',N'',N'',1,0)
-select * from tblUser where tblUser.UserName=N'' and tblUser.PassWord=N''
+select * from tblVideo
 
 
 --drop csdl

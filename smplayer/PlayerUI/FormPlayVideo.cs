@@ -18,15 +18,17 @@ namespace PlayerUI
         string[] paths;
         public FormPlayVideo()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
+            /*OpenFileDialog ofd = new OpenFileDialog();
 
             ofd.Multiselect = true;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 paths = ofd.FileNames;
-            }
+            }*/
             InitializeComponent();
-            path = paths[0];
+            path = System.IO.Directory.GetCurrentDirectory().ToString() +
+                "\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4";
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
