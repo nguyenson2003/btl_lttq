@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flpContain = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // flpContain
@@ -45,14 +47,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.MouseEnter += new System.EventHandler(this.pnCellList_MouseEnter);
-            this.label1.MouseLeave += new System.EventHandler(this.pnCellList_MouseLeave);
+            this.label1.Text = "label1hu";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormShowVideo
             // 
@@ -65,7 +72,6 @@
             this.Name = "FormShowVideo";
             this.Text = "FormShowVideo";
             this.Load += new System.EventHandler(this.FormShowVideo_Load);
-            this.SizeChanged += new System.EventHandler(this.FormShowVideo_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,5 +81,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpContain;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

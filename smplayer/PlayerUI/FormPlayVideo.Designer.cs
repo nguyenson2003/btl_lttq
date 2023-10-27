@@ -47,6 +47,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnFullScreenState = new System.Windows.Forms.Button();
             this.btnNomalScreenState = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +56,10 @@
             // 
             this.player.Dock = System.Windows.Forms.DockStyle.Fill;
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Location = new System.Drawing.Point(5, 5);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(877, 501);
+            this.player.Size = new System.Drawing.Size(867, 491);
             this.player.TabIndex = 1;
             this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
             this.player.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.player_ClickEvent);
@@ -71,7 +72,7 @@
             this.pbTrackVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbTrackVideo.Location = new System.Drawing.Point(13, 16);
             this.pbTrackVideo.Name = "pbTrackVideo";
-            this.pbTrackVideo.Size = new System.Drawing.Size(851, 10);
+            this.pbTrackVideo.Size = new System.Drawing.Size(841, 10);
             this.pbTrackVideo.TabIndex = 2;
             this.pbTrackVideo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbTrackVideo_MouseClick);
             // 
@@ -148,7 +149,7 @@
             this.btnFullScreen.FlatAppearance.BorderSize = 0;
             this.btnFullScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFullScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScreen.Image")));
-            this.btnFullScreen.Location = new System.Drawing.Point(838, 46);
+            this.btnFullScreen.Location = new System.Drawing.Point(828, 46);
             this.btnFullScreen.Name = "btnFullScreen";
             this.btnFullScreen.Size = new System.Drawing.Size(26, 26);
             this.btnFullScreen.TabIndex = 3;
@@ -170,10 +171,10 @@
             this.panel1.Controls.Add(this.tbKeyPress);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 501);
+            this.panel1.Location = new System.Drawing.Point(5, 496);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(877, 95);
+            this.panel1.Size = new System.Drawing.Size(867, 95);
             this.panel1.TabIndex = 6;
             // 
             // lbSpeed
@@ -181,7 +182,7 @@
             this.lbSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSpeed.AutoSize = true;
             this.lbSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSpeed.Location = new System.Drawing.Point(601, 47);
+            this.lbSpeed.Location = new System.Drawing.Point(591, 47);
             this.lbSpeed.Name = "lbSpeed";
             this.lbSpeed.Size = new System.Drawing.Size(53, 25);
             this.lbSpeed.TabIndex = 6;
@@ -193,7 +194,7 @@
             this.lbTrack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTrack.AutoSize = true;
             this.lbTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrack.Location = new System.Drawing.Point(691, 47);
+            this.lbTrack.Location = new System.Drawing.Point(681, 47);
             this.lbTrack.Name = "lbTrack";
             this.lbTrack.Size = new System.Drawing.Size(118, 25);
             this.lbTrack.TabIndex = 6;
@@ -251,7 +252,7 @@
             this.btnFullScreenState.FlatAppearance.BorderSize = 0;
             this.btnFullScreenState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFullScreenState.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScreenState.Image")));
-            this.btnFullScreenState.Location = new System.Drawing.Point(838, 469);
+            this.btnFullScreenState.Location = new System.Drawing.Point(833, 464);
             this.btnFullScreenState.Name = "btnFullScreenState";
             this.btnFullScreenState.Size = new System.Drawing.Size(26, 26);
             this.btnFullScreenState.TabIndex = 3;
@@ -267,13 +268,18 @@
             this.btnNomalScreenState.FlatAppearance.BorderSize = 0;
             this.btnNomalScreenState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNomalScreenState.Image = ((System.Drawing.Image)(resources.GetObject("btnNomalScreenState.Image")));
-            this.btnNomalScreenState.Location = new System.Drawing.Point(806, 469);
+            this.btnNomalScreenState.Location = new System.Drawing.Point(801, 464);
             this.btnNomalScreenState.Name = "btnNomalScreenState";
             this.btnNomalScreenState.Size = new System.Drawing.Size(26, 26);
             this.btnNomalScreenState.TabIndex = 3;
             this.btnNomalScreenState.UseVisualStyleBackColor = false;
             this.btnNomalScreenState.Visible = false;
             this.btnNomalScreenState.Click += new System.EventHandler(this.btnFullScreen_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // FormPlayVideo
             // 
@@ -292,6 +298,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(793, 643);
             this.Name = "FormPlayVideo";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "SMPlayer";
             this.Load += new System.EventHandler(this.FormPlayVideo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -319,5 +326,6 @@
         private System.Windows.Forms.Button btnNomalScreenState;
         private System.Windows.Forms.Label lbSpeed;
         private System.Windows.Forms.TextBox tbKeyPress;
+        private System.Windows.Forms.Timer timer2;
     }
 }

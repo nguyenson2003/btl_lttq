@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,18 +14,19 @@ namespace PlayerUI
     {
         public Panel pnBottom;
         public PictureBox pbAvatar;
-        public Label lbVideoName;
-        public Label lbUserName;
-        public Label lbLike;
+        public System.Windows.Forms.Label lbVideoName;
+        public System.Windows.Forms.Label lbUserName;
+        public System.Windows.Forms.Label lbLike;
         public FormWMP wmpPlay;
         public PanelCell()
         {
             pnBottom= new Panel(); 
             pbAvatar=new PictureBox();
-            lbLike= new Label(); 
-            lbUserName = new Label(); 
-            lbVideoName =new Label();
+            lbLike= new System.Windows.Forms.Label(); 
+            lbUserName = new System.Windows.Forms.Label(); 
+            lbVideoName =new System.Windows.Forms.Label();
             wmpPlay=new FormWMP();
+            lbLike.AutoSize =lbUserName.AutoSize=lbVideoName.AutoSize= false;
 
             this.Size = new System.Drawing.Size(500,300);
             pnBottom.Size = new System.Drawing.Size(10, 55);
@@ -77,19 +79,26 @@ namespace PlayerUI
             pbAvatar.Image = Image.FromFile(System.IO.Directory.GetCurrentDirectory().ToString() 
                 + "\\images\\User_50px.png");
             pbAvatar.SizeMode=PictureBoxSizeMode.Zoom;
+
+
+            lbVideoName.MouseEnter += new System.EventHandler(pnCellList_MouseEnter);
+            lbVideoName.MouseLeave += new System.EventHandler(pnCellList_MouseLeave);
+
         }
-        /*private void openChildForm(System.Windows.Forms.Form childForm)
+        private void pnCellList_MouseLeave(object sender, EventArgs e)
         {
-            if (activeForm != null) activeForm.Close();
-            activeForm = childForm;
-            childForm.Size = panelChildForm.Size;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }*/
+            
+            if (wmpPlay != null)
+                wmpPlay.fPause();
+              
+        }
+
+        private void pnCellList_MouseEnter(object sender, EventArgs e)
+        {
+            
+            if (wmpPlay != null)
+                wmpPlay.fPlay();
+                    
+        }
     }
 }

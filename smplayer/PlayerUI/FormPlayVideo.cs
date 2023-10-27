@@ -19,17 +19,10 @@ namespace PlayerUI
         string[] paths;
         public FormPlayVideo()
         {
-            /*OpenFileDialog ofd = new OpenFileDialog();
-
-            ofd.Multiselect = true;
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                paths = ofd.FileNames;
-            }*/
             InitializeComponent();
             path = System.IO.Directory.GetCurrentDirectory().ToString() +
                 "\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4";
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -41,12 +34,6 @@ namespace PlayerUI
                 lbTrack.Text = player.Ctlcontrols.currentPositionString + "/" +
                     player.Ctlcontrols.currentItem.durationString;
             }
-        }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            /*player.settings.volume=trackBar1.Value;
-            player.Ctlcontrols.currentPosition = 0;*/
         }
 
         private void FormPlayVideo_Load(object sender, EventArgs e)
@@ -62,19 +49,6 @@ namespace PlayerUI
             tbKeyPress.TabIndex = 0;
             tbKeyPress.Select();  
             
-        }
-
-        private void btnOpen_Click(object sender, EventArgs e)
-        {
-            /*OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = true;
-            if(ofd.ShowDialog() == DialogResult.OK) { 
-                files= ofd.SafeFileNames;
-                paths = ofd.FileNames;
-                for(int i=0;i<files.Length; i++)
-                    trackList.Items.Add(files[i]);
-            }*/
-
         }
         private void changePlayState()
         {
@@ -212,6 +186,15 @@ namespace PlayerUI
         {
             changePlayState();
             tbKeyPress.Select();
+            timer2.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if(player.fullScreen) {
+                player.fullScreen=false;
+                timer2.Stop();
+            }
         }
     }
 }

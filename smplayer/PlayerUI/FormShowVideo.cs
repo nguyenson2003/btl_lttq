@@ -15,7 +15,7 @@ namespace PlayerUI
 {
     public partial class FormShowVideo : Form
     {
-        string sql= "select * from tblVideo";
+        string sql= "select FullName,VideoName,Likes,Path from tblVideo join tblUser on tblVideo.UserName=tblUser.UserName";
         DataProcesser dtBase = new DataProcesser();
         DataTable dtVideo;
         PanelCell[] pnCellList=new PanelCell[0];
@@ -47,11 +47,9 @@ namespace PlayerUI
                 pnCellList[i].wmpPlay.path = System.IO.Directory.GetCurrentDirectory().ToString() +
                         dtVideo.Rows[i]["Path"].ToString();
                 pnCellList[i].lbVideoName.Text = dtVideo.Rows[i]["VideoName"].ToString();
-                pnCellList[i].lbUserName.Text= dtVideo.Rows[i]["UserName"].ToString();
+                pnCellList[i].lbUserName.Text= dtVideo.Rows[i]["FullName"].ToString();
                 pnCellList[i].lbLike.Text = dtVideo.Rows[i]["Likes"].ToString();
 
-                pnCellList[i].lbVideoName.MouseEnter += new System.EventHandler(pnCellList_MouseEnter);
-                pnCellList[i].lbVideoName.MouseLeave += new System.EventHandler(pnCellList_MouseLeave);
                 
                 flpContain.Controls.Add(pnCellList[i]);
             }
@@ -60,34 +58,7 @@ namespace PlayerUI
                 
         }
 
-        private void pnCellList_MouseLeave(object sender, EventArgs e)
-        {
-            for(int i = 0; i < pnCellList.Length;i++)
-            {
-                if (pnCellList[i].lbVideoName == sender as Label)
-                {
-                    if (pnCellList[i] != null)
-                        pnCellList[i].wmpPlay.fPause();
-                    label1.Text = "pause";
-                    break;
-                }
-            }
-        }
-
-        private void pnCellList_MouseEnter(object sender, EventArgs e)
-        {
-            for (int i = 0; i < pnCellList.Length; i++)
-            {
-                if (pnCellList[i].lbVideoName == sender as Label)
-                {
-                    if (pnCellList[i] != null)
-                        pnCellList[i].wmpPlay.fPlay();
-                    label1.Text = "play";
-                    flpContain.Focus();
-                    break;
-                }
-            } 
-        }
+        
 
         private void FormShowVideo_Resize(object sender, EventArgs e)
         {
@@ -100,5 +71,9 @@ namespace PlayerUI
                     pnCellList[i].Margin = new Padding(temp / n / 2,0, temp / n / 2, 20);
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            FormShowVideo_Resize(sender,  e);
+        }
     }
 }

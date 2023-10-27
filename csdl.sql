@@ -71,12 +71,29 @@ values(N'user05',N'123',N'Ngô Phan Diệu Linh',1,0)
 
 
 insert into tblVideo
-values(N'video01',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
-	,N'D:\Downloads\Video\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
+values(N'video31',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
+	,N'\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
 insert into tblVideo
-values(N'video02',N'user01',N'Nightcore - Ignite - (K-391 '
-	,N'D:\Downloads\Video\Nightcore - Ignite - (K-391 .mp4',11)
-
+values(N'video32',N'user01',N'Nightcore - Ignite - (K-391 '
+	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
+insert into tblVideo
+values(N'video33',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
+	,N'\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
+insert into tblVideo
+values(N'video34',N'user01',N'Nightcore - Ignite - (K-391 '
+	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
+	insert into tblVideo
+values(N'video35',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
+	,N'\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
+insert into tblVideo
+values(N'video36',N'user01',N'Nightcore - Ignite - (K-391 '
+	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
+	insert into tblVideo
+values(N'video37',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
+	,N'\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
+insert into tblVideo
+values(N'video38',N'user01',N'Nightcore - Ignite - (K-391 '
+	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
 
 update tblUser
 set isOnline=0

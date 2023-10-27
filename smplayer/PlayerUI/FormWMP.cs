@@ -34,5 +34,31 @@ namespace PlayerUI
         {
             player.Ctlcontrols.pause();
         }
+
+        private void player_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+            fPlay();
+            /*if (e.)//left la preview
+            {
+                timer2.Start();
+                fPause();
+            }*/
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (player.fullScreen)
+            {
+                player.fullScreen = false;
+                timer1.Stop();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.pause();
+            timer2.Stop();
+        }
     }
 }
