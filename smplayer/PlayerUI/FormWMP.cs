@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,29 +15,22 @@ namespace PlayerUI
     public partial class FormWMP : Form
     {
         /*WindowsMediaPlayer*/
+        public string path;
         public FormWMP()
         {
             InitializeComponent();
             player.uiMode = "None";
+            player.URL = "";
             this.TopLevel = false;
             this.FormBorderStyle = FormBorderStyle.None;
-            
         }
-        public void setPath(string path)
+        public void fPlay()
         {
-            player.URL= System.IO.Directory.GetCurrentDirectory().ToString() + path;
-            
-        }
-        public void Play()
-        {
+            if (player.URL == "")
+                player.URL = this.path;
             player.Ctlcontrols.play();
         }
-        public void Pause()
-        {
-            player.Ctlcontrols.pause();
-        }
-
-        private void FormWMP_Load(object sender, EventArgs e)
+        public void fPause()
         {
             player.Ctlcontrols.pause();
         }

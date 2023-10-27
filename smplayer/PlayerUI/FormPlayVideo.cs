@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -35,9 +36,8 @@ namespace PlayerUI
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-
                 pbTrackVideo.Maximum = (int)(player.Ctlcontrols.currentItem.duration * 100000);
-                pbTrackVideo.Value = (int)(player.Ctlcontrols.currentPosition * 100000);
+                pbTrackVideo.Value = Math.Min((int)(player.Ctlcontrols.currentPosition * 100000),pbTrackVideo.Maximum);
                 lbTrack.Text = player.Ctlcontrols.currentPositionString + "/" +
                     player.Ctlcontrols.currentItem.durationString;
             }
@@ -54,13 +54,14 @@ namespace PlayerUI
             player.uiMode = "None";
             player.URL = path;
             player.Ctlcontrols.play();
+            player.Ctlcontrols.pause();
             btnPlay.Image = btnPlayState.Image;
             pbVolume.Value = player.settings.volume = 100;
             lbVolume.Text = "100%";
             player.fullScreen=player.enableContextMenu = false;
             tbKeyPress.TabIndex = 0;
             tbKeyPress.Select();  
-
+            
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

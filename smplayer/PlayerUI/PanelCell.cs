@@ -62,7 +62,7 @@ namespace PlayerUI
             lbVideoName.BringToFront();
             lbVideoName.Dock = DockStyle.Fill;
 
-            pnBottom.Font = new Font("Microsoft Sans Serif", 9);
+            pnBottom.Font = new Font("Microsoft Sans Serif", 12);
 
             pbAvatar.Size = new System.Drawing.Size(60, 10);
             lbLike.Size = new System.Drawing.Size(75, 10);

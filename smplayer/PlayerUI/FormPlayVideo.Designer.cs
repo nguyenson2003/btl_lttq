@@ -39,9 +39,9 @@
             this.lbVolume = new System.Windows.Forms.Label();
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbKeyPress = new System.Windows.Forms.TextBox();
             this.lbSpeed = new System.Windows.Forms.Label();
             this.lbTrack = new System.Windows.Forms.Label();
+            this.tbKeyPress = new System.Windows.Forms.TextBox();
             this.btnPlayState = new System.Windows.Forms.Button();
             this.btnPauseState = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -176,17 +176,6 @@
             this.panel1.Size = new System.Drawing.Size(877, 95);
             this.panel1.TabIndex = 6;
             // 
-            // tbKeyPress
-            // 
-            this.tbKeyPress.BackColor = System.Drawing.Color.Black;
-            this.tbKeyPress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbKeyPress.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tbKeyPress.Location = new System.Drawing.Point(427, 51);
-            this.tbKeyPress.Name = "tbKeyPress";
-            this.tbKeyPress.Size = new System.Drawing.Size(0, 15);
-            this.tbKeyPress.TabIndex = 8;
-            this.tbKeyPress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnKeyPress_KeyUp);
-            // 
             // lbSpeed
             // 
             this.lbSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,6 +198,17 @@
             this.lbTrack.Size = new System.Drawing.Size(118, 25);
             this.lbTrack.TabIndex = 6;
             this.lbTrack.Text = "18:48/18:45";
+            // 
+            // tbKeyPress
+            // 
+            this.tbKeyPress.BackColor = System.Drawing.Color.Black;
+            this.tbKeyPress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbKeyPress.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tbKeyPress.Location = new System.Drawing.Point(427, 51);
+            this.tbKeyPress.Name = "tbKeyPress";
+            this.tbKeyPress.Size = new System.Drawing.Size(0, 15);
+            this.tbKeyPress.TabIndex = 8;
+            this.tbKeyPress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnKeyPress_KeyUp);
             // 
             // btnPlayState
             // 
@@ -241,7 +241,6 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnFullScreenState

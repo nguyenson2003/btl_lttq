@@ -52,7 +52,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormWMP";
             this.Text = "FormWMP";
-            this.Load += new System.EventHandler(this.FormWMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
