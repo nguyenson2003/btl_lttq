@@ -19,7 +19,7 @@ namespace SMPlayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            Application.Run(new FormShowVideo());
+            Application.Run(new FormLogin());
         }
         
     }

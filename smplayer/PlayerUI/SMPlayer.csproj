@@ -54,6 +54,12 @@
     <Compile Include="FormAdmin.designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShowMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowMusic.Designer.cs">
+      <DependentUpon>FormShowMusic.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShowVideo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,17 +102,17 @@
     <Compile Include="FormShowUser.Designer.cs">
       <DependentUpon>FormShowUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormWMP.cs">
+    <Compile Include="FormCell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormWMP.Designer.cs">
-      <DependentUpon>FormWMP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PanelCell.cs">
-      <SubType>Component</SubType>
+    <Compile Include="FormCell.Designer.cs">
+      <DependentUpon>FormCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormShowMusic.resx">
+      <DependentUpon>FormShowMusic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowVideo.resx">
       <DependentUpon>FormShowVideo.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,8 +137,8 @@
     <EmbeddedResource Include="FormShowUser.resx">
       <DependentUpon>FormShowUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormWMP.resx">
-      <DependentUpon>FormWMP.cs</DependentUpon>
+    <EmbeddedResource Include="FormCell.resx">
+      <DependentUpon>FormCell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

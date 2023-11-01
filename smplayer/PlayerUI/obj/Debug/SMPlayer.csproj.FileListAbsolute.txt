@@ -20,4 +20,5 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowUser.r
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.FormAdmin.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormUser.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowVideo.resources
-D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormWMP.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormCell.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowMusic.resources

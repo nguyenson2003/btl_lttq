@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLBanHang.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,45 +10,39 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WMPLib;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PlayerUI
 {
-    public partial class FormPlayVideo : Form
+    public partial class FormShowMusic : Form
     {
-        FormUser formUser;
-        string path;
-        public FormPlayVideo(string p, FormUser formUser)
+        DataProcesser dtbase = new DataProcesser();
+        public FormShowMusic()
         {
             InitializeComponent();
-            path = p;
-            this.formUser = formUser;
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 pbTrackVideo.Maximum = (int)(player.Ctlcontrols.currentItem.duration * 100000);
-                pbTrackVideo.Value = Math.Min((int)(player.Ctlcontrols.currentPosition * 100000),pbTrackVideo.Maximum);
+                pbTrackVideo.Value = Math.Min((int)(player.Ctlcontrols.currentPosition * 100000), pbTrackVideo.Maximum);
                 lbTrack.Text = player.Ctlcontrols.currentPositionString + "/" +
                     player.Ctlcontrols.currentItem.durationString;
             }
         }
 
-        private void FormPlayVideo_Load(object sender, EventArgs e)
+        private void FormShowMusic_Load(object sender, EventArgs e)
         {
             player.uiMode = "None";
-            player.URL = path;
+            player.URL = System.IO.Directory.GetCurrentDirectory().ToString()+ "\\Musics\\BeastMode.mp3";
             btnPlay.Image = btnPlayState.Image;
             pbVolume.Value = player.settings.volume = 100;
             lbVolume.Text = "100%";
-            player.fullScreen=player.enableContextMenu = false;
+            player.fullScreen = player.enableContextMenu = false;
             tbKeyPress.TabIndex = 0;
             Thread.Sleep(1000);
-            tbKeyPress.Select();  
-            
+            tbKeyPress.Select();
+
         }
         private void changePlayState()
         {
@@ -55,7 +50,8 @@ namespace PlayerUI
             {
                 player.Ctlcontrols.pause();
                 btnPlay.Image = btnPauseState.Image;
-            } else
+            }
+            else
             {
                 player.Ctlcontrols.play();
                 btnPlay.Image = btnPlayState.Image;
@@ -69,7 +65,7 @@ namespace PlayerUI
 
         private void pbTrackVideo_MouseClick(object sender, MouseEventArgs e)
         {
-            player.Ctlcontrols.currentPosition = player.currentMedia.duration * 
+            player.Ctlcontrols.currentPosition = player.currentMedia.duration *
                     e.X / pbTrackVideo.Width;
         }
 
@@ -80,15 +76,13 @@ namespace PlayerUI
         }
         private void changeWindowState()
         {
-            if (this.WindowState == FormWindowState.Maximized&&this.FormBorderStyle==FormBorderStyle.None)
+            if (this.WindowState == FormWindowState.Maximized && this.FormBorderStyle == FormBorderStyle.None)
             {
-                btnFullScreen.Image = btnFullScreenState.Image;
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.WindowState = FormWindowState.Normal;
             }
             else
             {
-                btnFullScreen.Image = btnNomalScreenState.Image;
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.WindowState = FormWindowState.Normal;
                 this.WindowState = FormWindowState.Maximized;
@@ -107,43 +101,23 @@ namespace PlayerUI
             {
                 pbVolume.Value = player.settings.volume = Math.Min(player.settings.volume + 5, 100);
                 lbVolume.Text = pbVolume.Value.ToString() + "%";
-            } else if (e.KeyCode == Keys.Down)
+            }
+            else if (e.KeyCode == Keys.Down)
             {
                 pbVolume.Value = player.settings.volume = Math.Max(player.settings.volume - 5, 0);
                 lbVolume.Text = pbVolume.Value.ToString() + "%";
-            } else if (e.KeyCode == Keys.Left)
+            }
+            else if (e.KeyCode == Keys.Left)
             {
                 player.Ctlcontrols.currentPosition = Math.Max(player.Ctlcontrols.currentPosition - 5, 0);
-            } else if (e.KeyCode == Keys.Right)
-            {
-                player.Ctlcontrols.currentPosition = Math.Min(player.Ctlcontrols.currentPosition +5
-                    , player.currentMedia.duration) ;
-            }else if (e.KeyCode == Keys.Z)
-            {
-                speedPlayer -= 0.25;
-                if (speedPlayer < 0.25)
-                    speedPlayer = 2;
-                player.settings.rate = speedPlayer;
-                lbSpeed.Text = speedPlayer.ToString() + "X";
-            }else if (e.KeyCode == Keys.X)
-            {
-                speedPlayer += 0.25;
-                if (speedPlayer > 2)
-                    speedPlayer = 0.25;
-                player.settings.rate = speedPlayer;
-                lbSpeed.Text = speedPlayer.ToString() + "X";
             }
-            e.Handled = true;
-        }
-        double speedPlayer = 1;
-        private void lbSpeed_Click(object sender, EventArgs e)
-        {
-            speedPlayer += 0.25;
-            if (speedPlayer > 2)
-                speedPlayer = 0.25;
-            player.settings.rate = speedPlayer;
-            lbSpeed.Text = speedPlayer.ToString() + "X"; 
+            else if (e.KeyCode == Keys.Right)
+            {
+                player.Ctlcontrols.currentPosition = Math.Min(player.Ctlcontrols.currentPosition + 5
+                    , player.currentMedia.duration);
+            }
             
+            e.Handled = true;
         }
 
         private void player_KeyDownEvent(object sender, AxWMPLib._WMPOCXEvents_KeyDownEvent e)
@@ -181,27 +155,21 @@ namespace PlayerUI
             }
         }
 
-        private void player_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
-        {
-            changePlayState();
-            tbKeyPress.Select();
-            timer2.Start();
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if(player.fullScreen) {
-                player.fullScreen=false;
+            if (player.fullScreen)
+            {
+                player.fullScreen = false;
                 timer2.Stop();
             }
         }
 
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
-            if(player.settings.mute==true)
+            if (player.settings.mute == true)
             {
-                player.settings.mute=false;
-                btnSpeaker.Image=btnUnmuteState.Image;
+                player.settings.mute = false;
+                btnSpeaker.Image = btnUnmuteState.Image;
             }
             else
             {
@@ -210,7 +178,7 @@ namespace PlayerUI
             }
         }
 
-        private void FormPlayVideo_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormShowVideo_FormClosed(object sender, FormClosedEventArgs e)
         {
             player.Ctlcontrols.pause();
             player.URL = "";

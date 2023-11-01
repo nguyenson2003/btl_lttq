@@ -34,12 +34,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVideo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnPlaylist = new System.Windows.Forms.Button();
-            this.panelMediaSubMenu = new System.Windows.Forms.Panel();
+            this.btnOpenLocalVideo = new System.Windows.Forms.Button();
+            this.btnLikedListVideo = new System.Windows.Forms.Button();
+            this.BeastMode = new System.Windows.Forms.Button();
+            this.pnVideoSubMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -59,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLogo.SuspendLayout();
-            this.panelMediaSubMenu.SuspendLayout();
+            this.pnVideoSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelChildForm.SuspendLayout();
@@ -72,7 +70,7 @@
             this.lbHello.AutoSize = true;
             this.lbHello.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbHello.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbHello.Location = new System.Drawing.Point(582, 0);
+            this.lbHello.Location = new System.Drawing.Point(619, 0);
             this.lbHello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHello.Name = "lbHello";
             this.lbHello.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
@@ -85,7 +83,7 @@
             // 
             this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(193, 268);
+            this.pictureBox9.Location = new System.Drawing.Point(211, 268);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(412, 150);
@@ -96,7 +94,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(51, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(286, 180);
@@ -118,10 +116,11 @@
             this.btnVideo.Margin = new System.Windows.Forms.Padding(0);
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnVideo.Size = new System.Drawing.Size(381, 64);
+            this.btnVideo.Size = new System.Drawing.Size(344, 64);
             this.btnVideo.TabIndex = 1;
             this.btnVideo.Text = "Video";
             this.btnVideo.UseVisualStyleBackColor = true;
+            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
             // 
             // panelLogo
             // 
@@ -130,109 +129,75 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(6);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(381, 180);
+            this.panelLogo.Size = new System.Drawing.Size(344, 180);
             this.panelLogo.TabIndex = 0;
             // 
-            // button5
+            // btnOpenLocalVideo
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 135);
-            this.button5.Margin = new System.Windows.Forms.Padding(6);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(381, 45);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Open recent media";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnOpenLocalVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpenLocalVideo.FlatAppearance.BorderSize = 0;
+            this.btnOpenLocalVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnOpenLocalVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnOpenLocalVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenLocalVideo.ForeColor = System.Drawing.Color.White;
+            this.btnOpenLocalVideo.Location = new System.Drawing.Point(0, 45);
+            this.btnOpenLocalVideo.Margin = new System.Windows.Forms.Padding(6);
+            this.btnOpenLocalVideo.Name = "btnOpenLocalVideo";
+            this.btnOpenLocalVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnOpenLocalVideo.Size = new System.Drawing.Size(344, 45);
+            this.btnOpenLocalVideo.TabIndex = 3;
+            this.btnOpenLocalVideo.Text = "Open local video";
+            this.btnOpenLocalVideo.UseVisualStyleBackColor = true;
+            this.btnOpenLocalVideo.Click += new System.EventHandler(this.btnOpenLocalVideo_Click);
             // 
-            // button4
+            // btnLikedListVideo
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 90);
-            this.button4.Margin = new System.Windows.Forms.Padding(6);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(381, 45);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Video Posted";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLikedListVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLikedListVideo.FlatAppearance.BorderSize = 0;
+            this.btnLikedListVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnLikedListVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnLikedListVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLikedListVideo.ForeColor = System.Drawing.Color.White;
+            this.btnLikedListVideo.Location = new System.Drawing.Point(0, 0);
+            this.btnLikedListVideo.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLikedListVideo.Name = "btnLikedListVideo";
+            this.btnLikedListVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnLikedListVideo.Size = new System.Drawing.Size(344, 45);
+            this.btnLikedListVideo.TabIndex = 0;
+            this.btnLikedListVideo.Text = "Liked list";
+            this.btnLikedListVideo.UseVisualStyleBackColor = true;
+            this.btnLikedListVideo.Click += new System.EventHandler(this.btnLikedListVideo_Click);
             // 
-            // button3
+            // BeastMode
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 45);
-            this.button3.Margin = new System.Windows.Forms.Padding(6);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(381, 45);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "My List";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BeastMode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BeastMode.FlatAppearance.BorderSize = 0;
+            this.BeastMode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.BeastMode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.BeastMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BeastMode.ForeColor = System.Drawing.Color.White;
+            this.BeastMode.Image = ((System.Drawing.Image)(resources.GetObject("BeastMode.Image")));
+            this.BeastMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BeastMode.Location = new System.Drawing.Point(0, 339);
+            this.BeastMode.Margin = new System.Windows.Forms.Padding(6);
+            this.BeastMode.Name = "BeastMode";
+            this.BeastMode.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.BeastMode.Size = new System.Drawing.Size(344, 64);
+            this.BeastMode.TabIndex = 3;
+            this.BeastMode.Text = "Music";
+            this.BeastMode.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // pnVideoSubMenu
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(6);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(381, 45);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Open Video";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaylist
-            // 
-            this.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaylist.FlatAppearance.BorderSize = 0;
-            this.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaylist.ForeColor = System.Drawing.Color.White;
-            this.btnPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnPlaylist.Image")));
-            this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.Location = new System.Drawing.Point(0, 424);
-            this.btnPlaylist.Margin = new System.Windows.Forms.Padding(6);
-            this.btnPlaylist.Name = "btnPlaylist";
-            this.btnPlaylist.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPlaylist.Size = new System.Drawing.Size(381, 64);
-            this.btnPlaylist.TabIndex = 3;
-            this.btnPlaylist.Text = "Music";
-            this.btnPlaylist.UseVisualStyleBackColor = true;
-            // 
-            // panelMediaSubMenu
-            // 
-            this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelMediaSubMenu.Controls.Add(this.button5);
-            this.panelMediaSubMenu.Controls.Add(this.button4);
-            this.panelMediaSubMenu.Controls.Add(this.button3);
-            this.panelMediaSubMenu.Controls.Add(this.button2);
-            this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 244);
-            this.panelMediaSubMenu.Margin = new System.Windows.Forms.Padding(6);
-            this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(381, 180);
-            this.panelMediaSubMenu.TabIndex = 2;
+            this.pnVideoSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.pnVideoSubMenu.Controls.Add(this.btnOpenLocalVideo);
+            this.pnVideoSubMenu.Controls.Add(this.btnLikedListVideo);
+            this.pnVideoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnVideoSubMenu.Location = new System.Drawing.Point(0, 244);
+            this.pnVideoSubMenu.Margin = new System.Windows.Forms.Padding(6);
+            this.pnVideoSubMenu.Name = "pnVideoSubMenu";
+            this.pnVideoSubMenu.Size = new System.Drawing.Size(344, 95);
+            this.pnVideoSubMenu.TabIndex = 2;
             // 
             // button1
             // 
@@ -246,7 +211,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(381, 72);
+            this.button1.Size = new System.Drawing.Size(344, 72);
             this.button1.TabIndex = 3;
             this.button1.Text = "Export playlist";
             this.button1.UseVisualStyleBackColor = true;
@@ -263,7 +228,7 @@
             this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(381, 72);
+            this.button6.Size = new System.Drawing.Size(344, 72);
             this.button6.TabIndex = 2;
             this.button6.Text = "Import playlist";
             this.button6.UseVisualStyleBackColor = true;
@@ -280,7 +245,7 @@
             this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(381, 72);
+            this.button7.Size = new System.Drawing.Size(344, 72);
             this.button7.TabIndex = 1;
             this.button7.Text = "Managing playlist";
             this.button7.UseVisualStyleBackColor = true;
@@ -297,7 +262,7 @@
             this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(381, 72);
+            this.button8.Size = new System.Drawing.Size(344, 72);
             this.button8.TabIndex = 0;
             this.button8.Text = "New playlist";
             this.button8.UseVisualStyleBackColor = true;
@@ -312,13 +277,13 @@
             this.btnTools.ForeColor = System.Drawing.Color.White;
             this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 769);
+            this.btnTools.Location = new System.Drawing.Point(0, 684);
             this.btnTools.Margin = new System.Windows.Forms.Padding(6);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(381, 64);
+            this.btnTools.Size = new System.Drawing.Size(344, 64);
             this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "Video";
+            this.btnTools.Text = "Setting";
             this.btnTools.UseVisualStyleBackColor = true;
             // 
             // panelPlaylistSubMenu
@@ -329,10 +294,10 @@
             this.panelPlaylistSubMenu.Controls.Add(this.button7);
             this.panelPlaylistSubMenu.Controls.Add(this.button8);
             this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 488);
+            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 403);
             this.panelPlaylistSubMenu.Margin = new System.Windows.Forms.Padding(6);
             this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
-            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(381, 281);
+            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(344, 281);
             this.panelPlaylistSubMenu.TabIndex = 4;
             // 
             // button10
@@ -347,7 +312,7 @@
             this.button10.Margin = new System.Windows.Forms.Padding(6);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(381, 72);
+            this.button10.Size = new System.Drawing.Size(344, 72);
             this.button10.TabIndex = 2;
             this.button10.Text = "Preferences";
             this.button10.UseVisualStyleBackColor = true;
@@ -364,7 +329,7 @@
             this.button12.Margin = new System.Windows.Forms.Padding(6);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(381, 72);
+            this.button12.Size = new System.Drawing.Size(344, 72);
             this.button12.TabIndex = 1;
             this.button12.Text = "Effects and filters";
             this.button12.UseVisualStyleBackColor = true;
@@ -381,7 +346,7 @@
             this.button13.Margin = new System.Windows.Forms.Padding(6);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(381, 72);
+            this.button13.Size = new System.Drawing.Size(344, 72);
             this.button13.TabIndex = 0;
             this.button13.Text = "Media converter";
             this.button13.UseVisualStyleBackColor = true;
@@ -396,11 +361,11 @@
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 1108);
+            this.btnHelp.Location = new System.Drawing.Point(0, 1023);
             this.btnHelp.Margin = new System.Windows.Forms.Padding(6);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(381, 64);
+            this.btnHelp.Size = new System.Drawing.Size(344, 64);
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "  Help";
             this.btnHelp.UseVisualStyleBackColor = true;
@@ -415,11 +380,11 @@
             this.btnEqualizer.ForeColor = System.Drawing.Color.White;
             this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
             this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 1044);
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 959);
             this.btnEqualizer.Margin = new System.Windows.Forms.Padding(6);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(381, 64);
+            this.btnEqualizer.Size = new System.Drawing.Size(344, 64);
             this.btnEqualizer.TabIndex = 5;
             this.btnEqualizer.Text = "Setting";
             this.btnEqualizer.UseVisualStyleBackColor = true;
@@ -432,11 +397,11 @@
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(48)))), ((int)(((byte)(13)))));
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 1172);
+            this.btnExit.Location = new System.Drawing.Point(0, 1087);
             this.btnExit.Margin = new System.Windows.Forms.Padding(6);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(381, 88);
+            this.btnExit.Size = new System.Drawing.Size(344, 88);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Log out";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -451,10 +416,10 @@
             this.panelToolsSubMenu.Controls.Add(this.button12);
             this.panelToolsSubMenu.Controls.Add(this.button13);
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 833);
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 748);
             this.panelToolsSubMenu.Margin = new System.Windows.Forms.Padding(6);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(381, 211);
+            this.panelToolsSubMenu.Size = new System.Drawing.Size(344, 211);
             this.panelToolsSubMenu.TabIndex = 7;
             // 
             // panelChildForm
@@ -462,20 +427,21 @@
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.Controls.Add(this.pictureBox9);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(402, 50);
+            this.panelChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelChildForm.Location = new System.Drawing.Point(365, 50);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(6);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(746, 729);
+            this.panelChildForm.Size = new System.Drawing.Size(783, 729);
             this.panelChildForm.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lbHello);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(402, 0);
+            this.panel1.Location = new System.Drawing.Point(365, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 50);
+            this.panel1.Size = new System.Drawing.Size(783, 50);
             this.panel1.TabIndex = 6;
             // 
             // panelSideMenu
@@ -488,15 +454,15 @@
             this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
             this.panelSideMenu.Controls.Add(this.btnTools);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnPlaylist);
-            this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
+            this.panelSideMenu.Controls.Add(this.BeastMode);
+            this.panelSideMenu.Controls.Add(this.pnVideoSubMenu);
             this.panelSideMenu.Controls.Add(this.btnVideo);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Margin = new System.Windows.Forms.Padding(6);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(402, 779);
+            this.panelSideMenu.Size = new System.Drawing.Size(365, 779);
             this.panelSideMenu.TabIndex = 4;
             // 
             // FormUser
@@ -518,7 +484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLogo.ResumeLayout(false);
-            this.panelMediaSubMenu.ResumeLayout(false);
+            this.pnVideoSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
             this.panelToolsSubMenu.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
@@ -537,12 +503,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnVideo;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnPlaylist;
-        private System.Windows.Forms.Panel panelMediaSubMenu;
+        private System.Windows.Forms.Button btnOpenLocalVideo;
+        private System.Windows.Forms.Button btnLikedListVideo;
+        private System.Windows.Forms.Button BeastMode;
+        private System.Windows.Forms.Panel pnVideoSubMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;

@@ -15,8 +15,7 @@ create table tblVideo(
 	UserName	nvarchar(10)	not null
 		foreign key references tblUser(UserName),
 	VideoName	nvarchar(100)	not null,
-	Path	nvarchar(200)		not null,
-	Likes	int				not null	
+	Path	nvarchar(200)		not null
 );
 go
 create table tblVideoList(
@@ -29,7 +28,14 @@ go
 create table tblVideoListDetail(
 	ListId		nvarchar(10)	not null
 		foreign key references tblVideoList(ListId),
-	MusicId		nvarchar(10)	not null
+	VideoId		nvarchar(10)	not null
+		foreign key references tblVideo(VideoId)
+);
+go
+create table tblLikeVideoDetail(
+	UserName	nvarchar(10)	not null
+		foreign key references tblUser(UserName),
+	VideoId		nvarchar(10)	not null
 		foreign key references tblVideo(VideoId)
 );
 go
@@ -88,12 +94,38 @@ values(N'video35',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
 insert into tblVideo
 values(N'video36',N'user01',N'Nightcore - Ignite - (K-391 '
 	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
-	insert into tblVideo
+insert into tblVideo
 values(N'video37',N'user01',N'Luis Fonsi - Despacito ft. Daddy Yankee'
 	,N'\\Videos\\Luis Fonsi - Despacito ft. Daddy Yankee.mp4',10) 
 insert into tblVideo
 values(N'video38',N'user01',N'Nightcore - Ignite - (K-391 '
 	,N'\\Videos\\Nightcore - Ignite - (K-391 .mp4',11)
+
+
+insert into tblMusic
+values(N'music01',N'user01',N'BeastMode',N'\\Musics\\BeastMode.mp3')
+insert into tblMusic
+values(N'music02',N'user02',N'BeastMode',N'\\Musics\\BeastMode.mp3')
+insert into tblMusic
+values(N'music03',N'user03',N'BeastMode',N'\\Musics\\BeastMode.mp3')
+insert into tblMusic
+values(N'music04',N'user01',N'BeastMode',N'\\Musics\\BeastMode.mp3')
+insert into tblMusic
+values(N'music05',N'user01',N'BeastMode',N'\\Musics\\BeastMode.mp3')
+
+/*
+đoạn này để test
+*/
+select count(UserName) as Likes
+from tblLikeVideoDetail
+where VideoId=N'video34'
+
+select tblVideo.UserName,tblVideo.VideoId,FullName,VideoName,Path 
+from 
+	tblLikeVideoDetail join tblUser on tblLikeVideoDetail.UserName = tblUser.UserName 
+	join tblVideo on tblVideo.VideoId = tblLikeVideoDetail.VideoId 
+	
+where tblUser.UserName = N'user01'
 
 update tblUser
 set isOnline=0
@@ -106,6 +138,7 @@ select * from tblVideo
 --drop csdl
 DROP TABLE dbo.tblMusicListDetail;
 DROP TABLE dbo.tblVideoListDetail;
+DROP TABLE dbo.tblLikeVideoDetail;
 DROP TABLE dbo.tblMusicList;
 DROP TABLE dbo.tblVideoList;
 DROP TABLE dbo.tblMusic;

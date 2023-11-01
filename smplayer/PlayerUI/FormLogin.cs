@@ -137,13 +137,11 @@ namespace SMPlayer
                     dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'"+username+"'");
                     if (password == "123" && username.ToLower() == "admin")
                     {
-                        if (formAdmin != null) formAdmin.Close();
                         formAdmin = new FormAdmin(this);
                         formAdmin.Show(); 
                         this.Hide();
                     }else
                     {
-                        if (formUser != null) formUser.Close();
                         formUser = new FormUser(tbLoginUserName.Text, tbLoginPassword.Text, 0, this);
                         formUser.Show();  
                         this.Hide();

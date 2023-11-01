@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.flpContain = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -38,22 +37,11 @@
             // 
             this.flpContain.AutoScroll = true;
             this.flpContain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpContain.Location = new System.Drawing.Point(0, 16);
+            this.flpContain.Location = new System.Drawing.Point(0, 0);
             this.flpContain.Margin = new System.Windows.Forms.Padding(0);
             this.flpContain.Name = "flpContain";
-            this.flpContain.Size = new System.Drawing.Size(953, 424);
+            this.flpContain.Size = new System.Drawing.Size(399, 440);
             this.flpContain.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Gray;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1hu";
             // 
             // timer1
             // 
@@ -66,21 +54,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(953, 440);
+            this.ClientSize = new System.Drawing.Size(399, 440);
             this.Controls.Add(this.flpContain);
-            this.Controls.Add(this.label1);
             this.Name = "FormShowVideo";
             this.Text = "FormShowVideo";
             this.Load += new System.EventHandler(this.FormShowVideo_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flpContain;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
     }
 }

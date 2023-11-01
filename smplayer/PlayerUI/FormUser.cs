@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,12 +16,13 @@ namespace PlayerUI
     public partial class FormUser : Form
     {
         DataProcesser dtBase = new DataProcesser();
-        string UserName, Password;
+        public string UserName, Password;
         int isAdmin = 0;
         FormLogin formLogin;
-        public FormUser(string us,string pw,int isAdmin,FormLogin f)
+        public FormPlayVideo formPlayVideo;
+        public FormUser(string us,string pw,int isAdmin,FormLogin flg)
         {
-            formLogin = f;
+            formLogin = flg;
             this.isAdmin = isAdmin;
             UserName = us;
             Password = pw;
@@ -29,7 +31,7 @@ namespace PlayerUI
         }
         private void hideSubMenu()
         {
-            panelMediaSubMenu.Visible = false;
+            pnVideoSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
         }
@@ -48,7 +50,7 @@ namespace PlayerUI
         private void btnUser_Click(object sender, EventArgs e)
         {
 
-            showSubMenu(panelMediaSubMenu);
+            showSubMenu(pnVideoSubMenu);
         }
 
         #region MediaSubMenu
@@ -187,7 +189,7 @@ namespace PlayerUI
                 formLogin.Show();
             this.Hide();
         }
-        private System.Windows.Forms.Form activeForm = null;
+        public System.Windows.Forms.Form activeForm = null;
 
         private void FormUser_Load(object sender, EventArgs e)
         {
@@ -195,7 +197,7 @@ namespace PlayerUI
                         + UserName + "'");
             try
             {
-            lbHello.Text ="Hello "+ dtUser.Select()[0]["FullName"].ToString();
+                lbHello.Text ="Hello "+ dtUser.Select()[0]["FullName"].ToString();
             }
             catch
             {
@@ -210,8 +212,43 @@ namespace PlayerUI
                 Application.Exit();
         }
 
-        private void openChildForm(System.Windows.Forms.Form childForm)
+        private void btnVideo_Click(object sender, EventArgs e)
         {
+            showSubMenu(pnVideoSubMenu);
+            string sql = "select tblVideo.UserName,VideoId,FullName,VideoName,Path " +
+                "from tblVideo join tblUser on tblVideo.UserName=tblUser.UserName";
+            openChildForm(new FormShowVideo(this,sql));
+
+        }
+        public Panel getPnChildForm()
+        {
+            return panelChildForm;
+        }
+
+        private void btnLikedListVideo_Click(object sender, EventArgs e)
+        {
+            //open form liked list
+            string sql = "select tblVideo.UserName,tblVideo.VideoId,FullName,VideoName,Path " +
+                "from tblLikeVideoDetail join tblUser on tblLikeVideoDetail.UserName = tblUser.UserName " +
+                "join tblVideo on tblVideo.VideoId = tblLikeVideoDetail.VideoId " +
+                "where tblUser.UserName = N'"+UserName+"'";
+            openChildForm(new FormShowVideo(this, sql));
+
+        }
+
+        private void btnOpenLocalVideo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd=new OpenFileDialog();
+            ofd.Multiselect = false;
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                formPlayVideo =new FormPlayVideo(ofd.FileName, this);
+            }
+        }
+
+        public void openChildForm(System.Windows.Forms.Form childForm)
+        {
+            
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
             childForm.Size = panelChildForm.Size;

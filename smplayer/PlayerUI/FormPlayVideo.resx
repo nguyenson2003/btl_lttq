@@ -190,6 +190,33 @@
         wcddcZ48SPeZbqW+o5xc7n2UuOEr27b8h9HoBwMox0eUfbtGAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnUnmuteState.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAapJREFUSEvt
+        lj0oRWEYx2/KZwYWZVVMN6uy2CQWm2S1okxSPjaD1WC2sQqhxGQxmKwGlMWA8lE4fs/HuZ3ce9yXe92b
+        ur/6dzr///M8772n8/FmatQIIYqiEfSErtEqavCofMhQNIl63RJvEyV5QfMelw7DGtGOTIZbt8XvROfo
+        Q4IEx6jOy34HA5rQrkyL8SgHVivaQskfcOrxz6FZFt3TMQk8zoNoAL1qkbHuUTg0NaN9bf+Cl8T/dAkN
+        uiVeH3pHglyBrEfFoVgWPZDOQniZ1E2Zowssui3+grrGidv5EPYjuUPPXJcoFW+Tviy6U9OY8Eiye7Oi
+        N5R/o2H2oGepCMVbFU670I0Gdqx3f0MdY1SLk2DOWhaOt+bAGrNEGXJv2E6V/JsMc9mycLw1B1abJcq0
+        ex12qmxrYRLMcizcboky417Rhat2qatzcwkE8eN06LpAqXib9H33OD2alfI4FYLCUl8gK+oaR26HQUPI
+        K7MFzaG0V6Ycuz0Kh6ZSPxJrHv0cmiv/WYxhSOU3AjEMkq3POKrc1icNFpHN3gO6Qn+z2avxz8hkPgH+
+        3tEOSkCLowAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnMuteState.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAe1JREFUSEvl
+        lj0oRXEYxk/K9ZGBRVkV082qLDaJxSZZrSij8rEZrAazjVUIJSaLwWQ1oCwGlI/C8bzv+9zTufd/vuOk
+        /Orp3P/zPu//5XTOvX/vf+MTLsuBMwNo/z6cVwdLqSA6Dr1At9A6VGEpG2hwYCkAVgWagQZoibcNhXmD
+        FllOB+HE4fjYAu2p6fv3tMXvgS6hLymEOIWaGEsGwcjhoBXat48GWwJgdUA7UPgPOGc5GQSThtfBFgeU
+        hqF3DRmbLMWDUObhbJGc/Kcr0Agt8QahT0iQO1BlKR6EamqDYmFccrPm6IBl2uIvqWuc0XZBcQiSJ/SC
+        uoZiYZv0VaEHNY1plqT2aJb/AbkPGsx+6FUSWWGrgmUvdKcFuzbT31LHmNBwGJgLVssH2xUsJ81VRumN
+        2VJxHzKYq1bLD7eQPTrNUeboddtS2dVgGJiFBwvco8tWyjy91MGFbnUDhW517ocrgewPl4BC7XU6pq6g
+        WNgTRfh1ejYr5nWKAkH5AjmSrigYixxOf81WyomGs4IGGX6orQ0wIpl2cxxqX5ly7WM8O2iSX6YD2SEM
+        ywG0o9hgJD9ozvqz6MBycbBH3oNAAKPFwR5y9JmC0o4+Doz/HNhTDntP0A0UHPZwddCGMuC8ANrlwJnl
+        Dv1jeN43wXv5y0Ka278AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnPlayState.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKkAAAC/CAYAAACFWvypAAAABGdBTUEAALGPC/xhBQAAAJRJREFUeF7t
