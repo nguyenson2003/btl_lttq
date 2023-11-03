@@ -16,13 +16,11 @@ namespace PlayerUI
 {
     public partial class FormPlayVideo : Form
     {
-        FormUser formUser;
         string path;
-        public FormPlayVideo(string p, FormUser formUser)
+        public FormPlayVideo(string p)
         {
             InitializeComponent();
             path = p;
-            this.formUser = formUser;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

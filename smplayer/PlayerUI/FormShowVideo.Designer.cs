@@ -36,6 +36,7 @@
             // flpContain
             // 
             this.flpContain.AutoScroll = true;
+            this.flpContain.BackColor = System.Drawing.Color.Black;
             this.flpContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpContain.Location = new System.Drawing.Point(0, 0);
             this.flpContain.Margin = new System.Windows.Forms.Padding(0);

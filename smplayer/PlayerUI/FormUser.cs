@@ -32,155 +32,14 @@ namespace PlayerUI
         private void hideSubMenu()
         {
             pnVideoSubMenu.Visible = false;
-            panelPlaylistSubMenu.Visible = false;
-            panelToolsSubMenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
         {
-            if (subMenu.Visible == false)
-            {
-                hideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-                subMenu.Visible = false;
-        }
-
-        private void btnUser_Click(object sender, EventArgs e)
-        {
-
-            showSubMenu(pnVideoSubMenu);
-        }
-
-        #region MediaSubMenu
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Form2());
-            //..
-            //your codes
-            //..
             hideSubMenu();
+            subMenu.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-        #endregion
-
-        private void btnPlaylist_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelPlaylistSubMenu);
-        }
-
-        #region PlayListManagemetSubMenu
-        private void button8_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-        #endregion
-
-        private void btnTools_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelToolsSubMenu);
-        }
-        #region ToolsSubMenu
-        private void button13_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-        #endregion
-
-        private void btnEqualizer_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Form3());
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'"+UserName+"'");
@@ -210,6 +69,7 @@ namespace PlayerUI
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'"+UserName+"'");
             if (isAdmin == 0)
                 Application.Exit();
+            if (activeForm != null) activeForm.Close();
         }
 
         private void btnVideo_Click(object sender, EventArgs e)
@@ -220,18 +80,14 @@ namespace PlayerUI
             openChildForm(new FormShowVideo(this,sql));
 
         }
-        public Panel getPnChildForm()
-        {
-            return panelChildForm;
-        }
 
         private void btnLikedListVideo_Click(object sender, EventArgs e)
         {
             //open form liked list
-            string sql = "select tblVideo.UserName,tblVideo.VideoId,FullName,VideoName,Path " +
-                "from tblLikeVideoDetail join tblUser on tblLikeVideoDetail.UserName = tblUser.UserName " +
-                "join tblVideo on tblVideo.VideoId = tblLikeVideoDetail.VideoId " +
-                "where tblUser.UserName = N'"+UserName+"'";
+            string sql = "select VideoName,Path,FullName,tblVideo.UserName,tblVideo.VideoId from " +
+                "(select VideoId from tblLikeVideoDetail where UserName = N'"+UserName+"') t1 " +
+                "join tblVideo on t1.VideoId = tblVideo.VideoId join tblUser on " +
+                "tblVideo.UserName = tblUser.UserName";
             openChildForm(new FormShowVideo(this, sql));
 
         }
@@ -240,11 +96,34 @@ namespace PlayerUI
         {
             OpenFileDialog ofd=new OpenFileDialog();
             ofd.Multiselect = false;
+            ofd.Filter = "Mở mp4 thôi nhé ^^|*.mp4|Mở mp3 thôi nhé ^^|*.mp3";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                formPlayVideo =new FormPlayVideo(ofd.FileName, this);
+                formPlayVideo =new FormPlayVideo(ofd.FileName);
+                formPlayVideo.ShowDialog();
             }
         }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            string sql = "select MusicName,Path,FullName,tblMusic.MusicId " +
+                "from tblMusic join tblUser on tblMusic.UserName=tblUser.UserName";
+            openChildForm(new FormShowMusic(sql,UserName));
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null) activeForm.Close();
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openChildForm(new FormUpload(UserName));
+        }
+
+        
+
 
         public void openChildForm(System.Windows.Forms.Form childForm)
         {

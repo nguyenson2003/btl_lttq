@@ -54,17 +54,35 @@
     <Compile Include="FormAdmin.designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewListMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewListMusic.Designer.cs">
+      <DependentUpon>FormNewListMusic.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShowMusic.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormShowMusic.Designer.cs">
       <DependentUpon>FormShowMusic.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShowMusicList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowMusicList.Designer.cs">
+      <DependentUpon>FormShowMusicList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShowVideo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormShowVideo.Designer.cs">
       <DependentUpon>FormShowVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpload.Designer.cs">
+      <DependentUpon>FormUpload.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
@@ -110,11 +128,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormNewListMusic.resx">
+      <DependentUpon>FormNewListMusic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowMusic.resx">
       <DependentUpon>FormShowMusic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormShowMusicList.resx">
+      <DependentUpon>FormShowMusicList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowVideo.resx">
       <DependentUpon>FormShowVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpload.resx">
+      <DependentUpon>FormUpload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>

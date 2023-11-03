@@ -31,7 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShowMusic));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbMusicList = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbLists = new System.Windows.Forms.ComboBox();
+            this.tbMusicName = new System.Windows.Forms.TextBox();
+            this.btnAddYourList = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbMusicId = new System.Windows.Forms.TextBox();
+            this.tbFullName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btnFullScreenState = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -39,42 +47,146 @@
             this.btnNomalScreenState = new System.Windows.Forms.Button();
             this.btnPlayState = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnShuffle = new System.Windows.Forms.Button();
             this.lbTrack = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pbTrackVideo = new System.Windows.Forms.ProgressBar();
             this.lbVolume = new System.Windows.Forms.Label();
             this.pbVolume = new System.Windows.Forms.ProgressBar();
+            this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSpeaker = new System.Windows.Forms.Button();
             this.tbKeyPress = new System.Windows.Forms.TextBox();
             this.btnUnmuteState = new System.Windows.Forms.Button();
             this.btnMuteState = new System.Windows.Forms.Button();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnShuffleStateOn = new System.Windows.Forms.Button();
+            this.btnShuffleStateOff = new System.Windows.Forms.Button();
+            this.btnRefreshStateOff = new System.Windows.Forms.Button();
+            this.btnRefreshStateOn = new System.Windows.Forms.Button();
+            this.btnRefreshStateOn1 = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.lbMusicList);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(652, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 597);
+            this.panel1.Size = new System.Drawing.Size(340, 577);
             this.panel1.TabIndex = 0;
             // 
-            // listBox1
+            // lbMusicList
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(340, 597);
-            this.listBox1.TabIndex = 0;
+            this.lbMusicList.BackColor = System.Drawing.Color.Black;
+            this.lbMusicList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbMusicList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMusicList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMusicList.ForeColor = System.Drawing.Color.White;
+            this.lbMusicList.FormattingEnabled = true;
+            this.lbMusicList.ItemHeight = 25;
+            this.lbMusicList.Location = new System.Drawing.Point(0, 288);
+            this.lbMusicList.Name = "lbMusicList";
+            this.lbMusicList.Size = new System.Drawing.Size(340, 289);
+            this.lbMusicList.TabIndex = 0;
+            this.lbMusicList.SelectedIndexChanged += new System.EventHandler(this.lbMusicList_SelectedIndexChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.cbLists);
+            this.panel3.Controls.Add(this.tbMusicName);
+            this.panel3.Controls.Add(this.btnAddYourList);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.tbMusicId);
+            this.panel3.Controls.Add(this.tbFullName);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.panel3.Size = new System.Drawing.Size(340, 288);
+            this.panel3.TabIndex = 8;
+            // 
+            // cbLists
+            // 
+            this.cbLists.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLists.FormattingEnabled = true;
+            this.cbLists.Location = new System.Drawing.Point(0, 183);
+            this.cbLists.Name = "cbLists";
+            this.cbLists.Size = new System.Drawing.Size(340, 33);
+            this.cbLists.TabIndex = 8;
+            this.cbLists.SelectedIndexChanged += new System.EventHandler(this.cbLists_SelectedIndexChanged);
+            // 
+            // tbMusicName
+            // 
+            this.tbMusicName.Enabled = false;
+            this.tbMusicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicName.Location = new System.Drawing.Point(112, 60);
+            this.tbMusicName.Name = "tbMusicName";
+            this.tbMusicName.Size = new System.Drawing.Size(214, 30);
+            this.tbMusicName.TabIndex = 4;
+            // 
+            // btnAddYourList
+            // 
+            this.btnAddYourList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddYourList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddYourList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddYourList.Location = new System.Drawing.Point(0, 216);
+            this.btnAddYourList.Name = "btnAddYourList";
+            this.btnAddYourList.Size = new System.Drawing.Size(340, 52);
+            this.btnAddYourList.TabIndex = 7;
+            this.btnAddYourList.Text = "thêm vào danh sách yêu thích";
+            this.btnAddYourList.UseVisualStyleBackColor = true;
+            this.btnAddYourList.Click += new System.EventHandler(this.btnAddYourList_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tên bài hát";
+            // 
+            // tbMusicId
+            // 
+            this.tbMusicId.Enabled = false;
+            this.tbMusicId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicId.Location = new System.Drawing.Point(112, 98);
+            this.tbMusicId.Name = "tbMusicId";
+            this.tbMusicId.Size = new System.Drawing.Size(214, 30);
+            this.tbMusicId.TabIndex = 5;
+            this.tbMusicId.Visible = false;
+            // 
+            // tbFullName
+            // 
+            this.tbFullName.Enabled = false;
+            this.tbFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFullName.Location = new System.Drawing.Point(112, 129);
+            this.tbFullName.Name = "tbFullName";
+            this.tbFullName.Size = new System.Drawing.Size(214, 30);
+            this.tbFullName.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Tài khoản";
             // 
             // timer2
             // 
@@ -89,7 +201,7 @@
             this.btnFullScreenState.FlatAppearance.BorderSize = 0;
             this.btnFullScreenState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFullScreenState.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScreenState.Image")));
-            this.btnFullScreenState.Location = new System.Drawing.Point(993, 594);
+            this.btnFullScreenState.Location = new System.Drawing.Point(993, 574);
             this.btnFullScreenState.Name = "btnFullScreenState";
             this.btnFullScreenState.Size = new System.Drawing.Size(26, 26);
             this.btnFullScreenState.TabIndex = 8;
@@ -99,6 +211,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnPauseState
@@ -123,7 +236,7 @@
             this.btnNomalScreenState.FlatAppearance.BorderSize = 0;
             this.btnNomalScreenState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNomalScreenState.Image = ((System.Drawing.Image)(resources.GetObject("btnNomalScreenState.Image")));
-            this.btnNomalScreenState.Location = new System.Drawing.Point(961, 594);
+            this.btnNomalScreenState.Location = new System.Drawing.Point(961, 574);
             this.btnNomalScreenState.Name = "btnNomalScreenState";
             this.btnNomalScreenState.Size = new System.Drawing.Size(26, 26);
             this.btnNomalScreenState.TabIndex = 10;
@@ -147,21 +260,52 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.btnRefresh);
+            this.panel2.Controls.Add(this.btnShuffle);
             this.panel2.Controls.Add(this.lbTrack);
             this.panel2.Controls.Add(this.btnPlay);
             this.panel2.Controls.Add(this.pbTrackVideo);
             this.panel2.Controls.Add(this.lbVolume);
             this.panel2.Controls.Add(this.pbVolume);
+            this.panel2.Controls.Add(this.btnPrevious);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.btnSpeaker);
             this.panel2.Controls.Add(this.tbKeyPress);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 502);
+            this.panel2.Location = new System.Drawing.Point(0, 482);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
             this.panel2.Size = new System.Drawing.Size(652, 95);
             this.panel2.TabIndex = 12;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(438, 46);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(33, 26);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnShuffle
+            // 
+            this.btnShuffle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnShuffle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShuffle.FlatAppearance.BorderSize = 0;
+            this.btnShuffle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShuffle.Image = ((System.Drawing.Image)(resources.GetObject("btnShuffle.Image")));
+            this.btnShuffle.Location = new System.Drawing.Point(395, 46);
+            this.btnShuffle.Name = "btnShuffle";
+            this.btnShuffle.Size = new System.Drawing.Size(37, 26);
+            this.btnShuffle.TabIndex = 3;
+            this.btnShuffle.UseVisualStyleBackColor = true;
+            this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
             // 
             // lbTrack
             // 
@@ -170,9 +314,9 @@
             this.lbTrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrack.Location = new System.Drawing.Point(521, 46);
             this.lbTrack.Name = "lbTrack";
-            this.lbTrack.Size = new System.Drawing.Size(118, 25);
+            this.lbTrack.Size = new System.Drawing.Size(86, 25);
             this.lbTrack.TabIndex = 6;
-            this.lbTrack.Text = "18:48/18:45";
+            this.lbTrack.Text = "--:--/--:--";
             // 
             // btnPlay
             // 
@@ -183,7 +327,7 @@
             this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
-            this.btnPlay.Location = new System.Drawing.Point(27, 34);
+            this.btnPlay.Location = new System.Drawing.Point(69, 34);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(50, 50);
             this.btnPlay.TabIndex = 3;
@@ -207,7 +351,7 @@
             this.lbVolume.AutoSize = true;
             this.lbVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVolume.ForeColor = System.Drawing.Color.White;
-            this.lbVolume.Location = new System.Drawing.Point(308, 46);
+            this.lbVolume.Location = new System.Drawing.Point(332, 46);
             this.lbVolume.Name = "lbVolume";
             this.lbVolume.Size = new System.Drawing.Size(55, 24);
             this.lbVolume.TabIndex = 5;
@@ -217,11 +361,25 @@
             // 
             this.pbVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pbVolume.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbVolume.Location = new System.Drawing.Point(202, 54);
+            this.pbVolume.Location = new System.Drawing.Point(226, 54);
             this.pbVolume.Name = "pbVolume";
             this.pbVolume.Size = new System.Drawing.Size(100, 10);
             this.pbVolume.TabIndex = 4;
             this.pbVolume.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbVolume_MouseClick);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.Location = new System.Drawing.Point(23, 51);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(26, 26);
+            this.btnPrevious.TabIndex = 3;
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -230,11 +388,12 @@
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(92, 46);
+            this.btnNext.Location = new System.Drawing.Point(134, 51);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(26, 26);
             this.btnNext.TabIndex = 3;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnSpeaker
             // 
@@ -243,7 +402,7 @@
             this.btnSpeaker.FlatAppearance.BorderSize = 0;
             this.btnSpeaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpeaker.Image = ((System.Drawing.Image)(resources.GetObject("btnSpeaker.Image")));
-            this.btnSpeaker.Location = new System.Drawing.Point(156, 42);
+            this.btnSpeaker.Location = new System.Drawing.Point(180, 42);
             this.btnSpeaker.Name = "btnSpeaker";
             this.btnSpeaker.Size = new System.Drawing.Size(35, 35);
             this.btnSpeaker.TabIndex = 3;
@@ -268,7 +427,7 @@
             this.btnUnmuteState.FlatAppearance.BorderSize = 0;
             this.btnUnmuteState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnmuteState.Image = ((System.Drawing.Image)(resources.GetObject("btnUnmuteState.Image")));
-            this.btnUnmuteState.Location = new System.Drawing.Point(125, 461);
+            this.btnUnmuteState.Location = new System.Drawing.Point(125, 441);
             this.btnUnmuteState.Name = "btnUnmuteState";
             this.btnUnmuteState.Size = new System.Drawing.Size(35, 35);
             this.btnUnmuteState.TabIndex = 3;
@@ -282,12 +441,98 @@
             this.btnMuteState.FlatAppearance.BorderSize = 0;
             this.btnMuteState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuteState.Image = ((System.Drawing.Image)(resources.GetObject("btnMuteState.Image")));
-            this.btnMuteState.Location = new System.Drawing.Point(166, 461);
+            this.btnMuteState.Location = new System.Drawing.Point(166, 441);
             this.btnMuteState.Name = "btnMuteState";
             this.btnMuteState.Size = new System.Drawing.Size(35, 35);
             this.btnMuteState.TabIndex = 3;
             this.btnMuteState.UseVisualStyleBackColor = true;
             this.btnMuteState.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(202, 128);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(262, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnShuffleStateOn
+            // 
+            this.btnShuffleStateOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnShuffleStateOn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShuffleStateOn.FlatAppearance.BorderSize = 0;
+            this.btnShuffleStateOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShuffleStateOn.Image = ((System.Drawing.Image)(resources.GetObject("btnShuffleStateOn.Image")));
+            this.btnShuffleStateOn.Location = new System.Drawing.Point(393, 445);
+            this.btnShuffleStateOn.Name = "btnShuffleStateOn";
+            this.btnShuffleStateOn.Size = new System.Drawing.Size(26, 26);
+            this.btnShuffleStateOn.TabIndex = 3;
+            this.btnShuffleStateOn.UseVisualStyleBackColor = true;
+            this.btnShuffleStateOn.Visible = false;
+            // 
+            // btnShuffleStateOff
+            // 
+            this.btnShuffleStateOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnShuffleStateOff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShuffleStateOff.FlatAppearance.BorderSize = 0;
+            this.btnShuffleStateOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShuffleStateOff.Image = ((System.Drawing.Image)(resources.GetObject("btnShuffleStateOff.Image")));
+            this.btnShuffleStateOff.Location = new System.Drawing.Point(361, 445);
+            this.btnShuffleStateOff.Name = "btnShuffleStateOff";
+            this.btnShuffleStateOff.Size = new System.Drawing.Size(26, 26);
+            this.btnShuffleStateOff.TabIndex = 3;
+            this.btnShuffleStateOff.UseVisualStyleBackColor = true;
+            this.btnShuffleStateOff.Visible = false;
+            // 
+            // btnRefreshStateOff
+            // 
+            this.btnRefreshStateOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefreshStateOff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefreshStateOff.FlatAppearance.BorderSize = 0;
+            this.btnRefreshStateOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshStateOff.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshStateOff.Image")));
+            this.btnRefreshStateOff.Location = new System.Drawing.Point(427, 445);
+            this.btnRefreshStateOff.Name = "btnRefreshStateOff";
+            this.btnRefreshStateOff.Size = new System.Drawing.Size(26, 26);
+            this.btnRefreshStateOff.TabIndex = 3;
+            this.btnRefreshStateOff.UseVisualStyleBackColor = true;
+            this.btnRefreshStateOff.Visible = false;
+            // 
+            // btnRefreshStateOn
+            // 
+            this.btnRefreshStateOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefreshStateOn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefreshStateOn.FlatAppearance.BorderSize = 0;
+            this.btnRefreshStateOn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshStateOn.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshStateOn.Image")));
+            this.btnRefreshStateOn.Location = new System.Drawing.Point(459, 445);
+            this.btnRefreshStateOn.Name = "btnRefreshStateOn";
+            this.btnRefreshStateOn.Size = new System.Drawing.Size(26, 26);
+            this.btnRefreshStateOn.TabIndex = 3;
+            this.btnRefreshStateOn.UseVisualStyleBackColor = true;
+            this.btnRefreshStateOn.Visible = false;
+            // 
+            // btnRefreshStateOn1
+            // 
+            this.btnRefreshStateOn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRefreshStateOn1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefreshStateOn1.FlatAppearance.BorderSize = 0;
+            this.btnRefreshStateOn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshStateOn1.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshStateOn1.Image")));
+            this.btnRefreshStateOn1.Location = new System.Drawing.Point(491, 445);
+            this.btnRefreshStateOn1.Name = "btnRefreshStateOn1";
+            this.btnRefreshStateOn1.Size = new System.Drawing.Size(26, 26);
+            this.btnRefreshStateOn1.TabIndex = 3;
+            this.btnRefreshStateOn1.UseVisualStyleBackColor = true;
+            this.btnRefreshStateOn1.Visible = false;
+            // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // player
             // 
@@ -296,24 +541,11 @@
             this.player.Location = new System.Drawing.Point(0, 0);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(652, 597);
+            this.player.Size = new System.Drawing.Size(652, 577);
             this.player.TabIndex = 7;
             this.player.Visible = false;
             this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
             this.player.KeyDownEvent += new AxWMPLib._WMPOCXEvents_KeyDownEventHandler(this.player_KeyDownEvent);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(216, 144);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 259);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // FormShowMusic
             // 
@@ -321,6 +553,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(992, 597);
+            this.Controls.Add(this.btnRefreshStateOn1);
+            this.Controls.Add(this.btnRefreshStateOn);
+            this.Controls.Add(this.btnRefreshStateOff);
+            this.Controls.Add(this.btnShuffleStateOff);
+            this.Controls.Add(this.btnShuffleStateOn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFullScreenState);
             this.Controls.Add(this.btnPauseState);
@@ -333,14 +570,17 @@
             this.Controls.Add(this.btnMuteState);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FormShowMusic";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.Text = "FormShowMusic";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormShowVideo_FormClosed);
             this.Load += new System.EventHandler(this.FormShowMusic_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,7 +588,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbMusicList;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btnFullScreenState;
         private System.Windows.Forms.Timer timer1;
@@ -368,5 +608,22 @@
         private System.Windows.Forms.Button btnMuteState;
         private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddYourList;
+        private System.Windows.Forms.TextBox tbFullName;
+        private System.Windows.Forms.TextBox tbMusicName;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnShuffle;
+        private System.Windows.Forms.Button btnShuffleStateOn;
+        private System.Windows.Forms.Button btnShuffleStateOff;
+        private System.Windows.Forms.Button btnRefreshStateOff;
+        private System.Windows.Forms.Button btnRefreshStateOn;
+        private System.Windows.Forms.Button btnRefreshStateOn1;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox tbMusicId;
+        private System.Windows.Forms.ComboBox cbLists;
     }
 }

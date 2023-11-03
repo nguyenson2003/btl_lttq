@@ -22,3 +22,6 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormUser.resou
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowVideo.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormCell.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowMusic.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormUpload.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormNewListMusic.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowMusicList.resources

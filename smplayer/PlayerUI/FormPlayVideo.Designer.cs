@@ -33,7 +33,6 @@
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pbTrackVideo = new System.Windows.Forms.ProgressBar();
             this.btnPlay = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnSpeaker = new System.Windows.Forms.Button();
             this.pbVolume = new System.Windows.Forms.ProgressBar();
             this.lbVolume = new System.Windows.Forms.Label();
@@ -93,19 +92,6 @@
             this.btnPlay.TabIndex = 3;
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-            this.btnNext.Location = new System.Drawing.Point(92, 46);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(26, 26);
-            this.btnNext.TabIndex = 3;
-            this.btnNext.UseVisualStyleBackColor = true;
             // 
             // btnSpeaker
             // 
@@ -169,7 +155,6 @@
             this.panel1.Controls.Add(this.pbTrackVideo);
             this.panel1.Controls.Add(this.lbVolume);
             this.panel1.Controls.Add(this.pbVolume);
-            this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.btnUnmuteState);
             this.panel1.Controls.Add(this.btnMuteState);
             this.panel1.Controls.Add(this.btnSpeaker);
@@ -346,7 +331,6 @@
         private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.ProgressBar pbTrackVideo;
         private System.Windows.Forms.Button btnPlay;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnSpeaker;
         private System.Windows.Forms.ProgressBar pbVolume;
         private System.Windows.Forms.Label lbVolume;

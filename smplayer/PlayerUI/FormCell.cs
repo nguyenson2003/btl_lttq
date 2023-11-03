@@ -75,7 +75,7 @@ namespace PlayerUI
                 formUser.formPlayVideo.Hide();
             }
                 
-            formUser.formPlayVideo= new FormPlayVideo(path, formUser);
+            formUser.formPlayVideo= new FormPlayVideo(path);
             formUser.formPlayVideo.ShowDialog();
             player.Ctlcontrols.pause();
             // lock full screen

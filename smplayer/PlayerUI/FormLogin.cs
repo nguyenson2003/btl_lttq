@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SMPlayer
 {
@@ -134,6 +135,10 @@ namespace SMPlayer
                     MessageBox.Show("Tài khoản không khả dụng");
                 }else
                 {
+                    if (password == "123" && username.ToLower() == "admin")
+                        if (dtBase.DocBang("select* from tblUser where UserName = N'admin'").Rows.Count == 0)
+                            dtBase.CapNhatDuLieu("insert into tblUser values(N'admin',N'123',N'Lê Văn Minh',1,0)");
+                            
                     dtBase.CapNhatDuLieu("update tblUser set isOnline=1 where tblUser.UserName=N'"+username+"'");
                     if (password == "123" && username.ToLower() == "admin")
                     {

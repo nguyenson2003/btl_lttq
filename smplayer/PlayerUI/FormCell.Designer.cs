@@ -82,9 +82,9 @@
             this.btnSpeaker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpeaker.ForeColor = System.Drawing.Color.White;
             this.btnSpeaker.Image = ((System.Drawing.Image)(resources.GetObject("btnSpeaker.Image")));
-            this.btnSpeaker.Location = new System.Drawing.Point(370, 0);
+            this.btnSpeaker.Location = new System.Drawing.Point(368, 2);
             this.btnSpeaker.Name = "btnSpeaker";
-            this.btnSpeaker.Size = new System.Drawing.Size(102, 51);
+            this.btnSpeaker.Size = new System.Drawing.Size(102, 47);
             this.btnSpeaker.TabIndex = 1;
             this.btnSpeaker.UseVisualStyleBackColor = false;
             this.btnSpeaker.Click += new System.EventHandler(this.btnSpeaker_Click);
@@ -126,18 +126,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 241);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(2);
             this.panel1.Size = new System.Drawing.Size(472, 75);
             this.panel1.TabIndex = 2;
             // 
             // llbVideoName
             // 
-            this.llbVideoName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.llbVideoName.BackColor = System.Drawing.Color.Black;
             this.llbVideoName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llbVideoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbVideoName.ForeColor = System.Drawing.Color.White;
             this.llbVideoName.LinkColor = System.Drawing.Color.White;
-            this.llbVideoName.Location = new System.Drawing.Point(63, 0);
+            this.llbVideoName.Location = new System.Drawing.Point(65, 2);
             this.llbVideoName.Name = "llbVideoName";
-            this.llbVideoName.Size = new System.Drawing.Size(307, 51);
+            this.llbVideoName.Size = new System.Drawing.Size(303, 47);
             this.llbVideoName.TabIndex = 4;
             this.llbVideoName.TabStop = true;
             this.llbVideoName.Text = "linkLabel1";
@@ -150,20 +152,20 @@
             this.panel2.Controls.Add(this.llbFullName);
             this.panel2.Controls.Add(this.btnLikes);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(63, 51);
+            this.panel2.Location = new System.Drawing.Point(65, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(409, 24);
+            this.panel2.Size = new System.Drawing.Size(405, 24);
             this.panel2.TabIndex = 3;
             // 
             // llbFullName
             // 
-            this.llbFullName.BackColor = System.Drawing.Color.Silver;
+            this.llbFullName.BackColor = System.Drawing.Color.Black;
             this.llbFullName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llbFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbFullName.LinkColor = System.Drawing.Color.White;
             this.llbFullName.Location = new System.Drawing.Point(0, 0);
             this.llbFullName.Name = "llbFullName";
-            this.llbFullName.Size = new System.Drawing.Size(307, 24);
+            this.llbFullName.Size = new System.Drawing.Size(303, 24);
             this.llbFullName.TabIndex = 6;
             this.llbFullName.TabStop = true;
             this.llbFullName.Text = "linkLabel2";
@@ -180,7 +182,7 @@
             this.btnLikes.ForeColor = System.Drawing.Color.White;
             this.btnLikes.Image = ((System.Drawing.Image)(resources.GetObject("btnLikes.Image")));
             this.btnLikes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLikes.Location = new System.Drawing.Point(307, 0);
+            this.btnLikes.Location = new System.Drawing.Point(303, 0);
             this.btnLikes.Name = "btnLikes";
             this.btnLikes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnLikes.Size = new System.Drawing.Size(102, 24);
@@ -194,11 +196,12 @@
             // 
             // pbAvatar
             // 
+            this.pbAvatar.BackColor = System.Drawing.Color.Black;
             this.pbAvatar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pbAvatar.Image")));
-            this.pbAvatar.Location = new System.Drawing.Point(0, 0);
+            this.pbAvatar.Location = new System.Drawing.Point(2, 2);
             this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(63, 75);
+            this.pbAvatar.Size = new System.Drawing.Size(63, 71);
             this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAvatar.TabIndex = 2;
             this.pbAvatar.TabStop = false;

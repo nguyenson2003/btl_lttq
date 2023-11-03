@@ -210,7 +210,6 @@ namespace PlayerUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = 1000;
             if(isConnected)
                 dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
         }
