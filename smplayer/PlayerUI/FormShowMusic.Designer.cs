@@ -33,9 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbMusicList = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAddYourList = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.cbLists = new System.Windows.Forms.ComboBox();
             this.tbMusicName = new System.Windows.Forms.TextBox();
-            this.btnAddYourList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMusicId = new System.Windows.Forms.TextBox();
             this.tbFullName = new System.Windows.Forms.TextBox();
@@ -70,6 +72,7 @@
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -94,17 +97,17 @@
             this.lbMusicList.ForeColor = System.Drawing.Color.White;
             this.lbMusicList.FormattingEnabled = true;
             this.lbMusicList.ItemHeight = 25;
-            this.lbMusicList.Location = new System.Drawing.Point(0, 288);
+            this.lbMusicList.Location = new System.Drawing.Point(0, 316);
             this.lbMusicList.Name = "lbMusicList";
-            this.lbMusicList.Size = new System.Drawing.Size(340, 289);
+            this.lbMusicList.Size = new System.Drawing.Size(340, 261);
             this.lbMusicList.TabIndex = 0;
             this.lbMusicList.SelectedIndexChanged += new System.EventHandler(this.lbMusicList_SelectedIndexChanged);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.cbLists);
             this.panel3.Controls.Add(this.tbMusicName);
-            this.panel3.Controls.Add(this.btnAddYourList);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.tbMusicId);
             this.panel3.Controls.Add(this.tbFullName);
@@ -113,12 +116,47 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.panel3.Size = new System.Drawing.Size(340, 288);
+            this.panel3.Size = new System.Drawing.Size(340, 316);
             this.panel3.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnAddYourList);
+            this.panel4.Controls.Add(this.btnDelete);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 253);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(340, 43);
+            this.panel4.TabIndex = 9;
+            // 
+            // btnAddYourList
+            // 
+            this.btnAddYourList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddYourList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddYourList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddYourList.Location = new System.Drawing.Point(169, 0);
+            this.btnAddYourList.Name = "btnAddYourList";
+            this.btnAddYourList.Size = new System.Drawing.Size(171, 43);
+            this.btnAddYourList.TabIndex = 7;
+            this.btnAddYourList.Text = "Add to list";
+            this.btnAddYourList.UseVisualStyleBackColor = true;
+            this.btnAddYourList.Click += new System.EventHandler(this.btnAddYourList_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(169, 43);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete from list";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cbLists
             // 
-            this.cbLists.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cbLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLists.FormattingEnabled = true;
             this.cbLists.Location = new System.Drawing.Point(0, 183);
@@ -135,19 +173,6 @@
             this.tbMusicName.Name = "tbMusicName";
             this.tbMusicName.Size = new System.Drawing.Size(214, 30);
             this.tbMusicName.TabIndex = 4;
-            // 
-            // btnAddYourList
-            // 
-            this.btnAddYourList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAddYourList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddYourList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddYourList.Location = new System.Drawing.Point(0, 216);
-            this.btnAddYourList.Name = "btnAddYourList";
-            this.btnAddYourList.Size = new System.Drawing.Size(340, 52);
-            this.btnAddYourList.TabIndex = 7;
-            this.btnAddYourList.Text = "thêm vào danh sách yêu thích";
-            this.btnAddYourList.UseVisualStyleBackColor = true;
-            this.btnAddYourList.Click += new System.EventHandler(this.btnAddYourList_Click);
             // 
             // label1
             // 
@@ -458,7 +483,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnShuffleStateOn
             // 
@@ -577,6 +602,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -625,5 +651,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tbMusicId;
         private System.Windows.Forms.ComboBox cbLists;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

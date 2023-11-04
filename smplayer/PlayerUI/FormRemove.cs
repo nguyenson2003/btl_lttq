@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SMPlayer
+namespace PlayerUI
 {
-    public partial class Form2 : System.Windows.Forms.Form
+    public partial class FormRemove : Form
     {
-        public Form2()
+        public FormRemove()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

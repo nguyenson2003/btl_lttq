@@ -33,7 +33,8 @@ namespace PlayerUI
             tbUsername.Text = Username;
             dttableLists = dataProcesser.DocBang("select * from tblMusicList " +
                 "where UserName=N'" + Username + "'");
-            for(int i=0;i<dttableLists.Rows.Count;i++)
+            cbLists.Items.Clear();
+            for (int i=0;i<dttableLists.Rows.Count;i++)
             {
                 cbLists.Items.Add(dttableLists.Rows[i]["ListName"].ToString() + 
                     " (" + dttableLists.Rows[i]["ListId"].ToString() + ")");
@@ -46,22 +47,47 @@ namespace PlayerUI
         private void btnNewList_Click(object sender, EventArgs e)
         {
             new FormNewListMusic(Username).ShowDialog();
-            this.Refresh();
+            FormShowMusicList_Load(null,null);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (cbLists.SelectedIndex < 0 || cbLists.SelectedIndex >= cbLists.Items.Count)
+            {
+                MessageBox.Show("Hãy chọn danh sách của bạn nếu chưa có hãy tạo mới");
                 return;
+            }
+                
             string ListId = dttableLists.Rows[cbLists.SelectedIndex]["ListId"].ToString();
             if(dataProcesser.DocBang("select * from tblMusicListDetail " +
                 "where ListId=N'"+ListId+"' and MusicId=N'"+MusicId+"'").Rows.Count==0)
             {   
                 dataProcesser.CapNhatDuLieu("insert into tblMusicListDetail " +
                     "values(N'"+ListId+"',N'"+MusicId+"')");
-                MessageBox.Show("Bài hát này đã được thêm vào danh sách");
+                
             }
+            MessageBox.Show("Bài hát này đã được thêm vào danh sách");
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (cbLists.SelectedIndex < 0 || cbLists.SelectedIndex >= cbLists.Items.Count)
+            {
+                MessageBox.Show("Hãy chọn danh sách của bạn nếu chưa có hãy tạo mới");
+                return;
+            }
+            if(MessageBox.Show("Bạn có chắc muốn xóa danh sách này không?", "",MessageBoxButtons.YesNo,MessageBoxIcon.Question)
+                == System.Windows.Forms.DialogResult.Yes)
+            {
+                string ListId = dttableLists.Rows[cbLists.SelectedIndex]["ListId"].ToString();
+                dataProcesser.CapNhatDuLieu("delete tblMusicListDetail where ListId=N'" + ListId + "'");
+                dataProcesser.CapNhatDuLieu("delete tblMusicList where ListId=N'" + ListId + "'");
+                MessageBox.Show("Xóa thành công danh sách này");
+                this.Hide();
+            }
+            
+            
         }
     }
 }

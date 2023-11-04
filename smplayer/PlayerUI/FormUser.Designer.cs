@@ -45,6 +45,10 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.pnSubRemove = new System.Windows.Forms.Panel();
+            this.btnRemoveVideo = new System.Windows.Forms.Button();
+            this.btnRemoveMusic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -52,6 +56,7 @@
             this.panelChildForm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
+            this.pnSubRemove.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbHello
@@ -60,10 +65,10 @@
             this.lbHello.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbHello.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbHello.Location = new System.Drawing.Point(713, 0);
-            this.lbHello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbHello.Margin = new System.Windows.Forms.Padding(0);
             this.lbHello.Name = "lbHello";
-            this.lbHello.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.lbHello.Size = new System.Drawing.Size(164, 45);
+            this.lbHello.Padding = new System.Windows.Forms.Padding(30, 15, 30, 10);
+            this.lbHello.Size = new System.Drawing.Size(164, 50);
             this.lbHello.TabIndex = 0;
             this.lbHello.Text = "Hello Minh";
             this.lbHello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +111,7 @@
             this.btnVideo.Margin = new System.Windows.Forms.Padding(0);
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnVideo.Size = new System.Drawing.Size(322, 64);
+            this.btnVideo.Size = new System.Drawing.Size(301, 64);
             this.btnVideo.TabIndex = 1;
             this.btnVideo.Text = "Video";
             this.btnVideo.UseVisualStyleBackColor = true;
@@ -119,7 +124,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(6);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(322, 180);
+            this.panelLogo.Size = new System.Drawing.Size(301, 180);
             this.panelLogo.TabIndex = 0;
             // 
             // btnOpenLocalVideo
@@ -134,7 +139,7 @@
             this.btnOpenLocalVideo.Margin = new System.Windows.Forms.Padding(6);
             this.btnOpenLocalVideo.Name = "btnOpenLocalVideo";
             this.btnOpenLocalVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnOpenLocalVideo.Size = new System.Drawing.Size(322, 45);
+            this.btnOpenLocalVideo.Size = new System.Drawing.Size(301, 45);
             this.btnOpenLocalVideo.TabIndex = 3;
             this.btnOpenLocalVideo.Text = "Open local media";
             this.btnOpenLocalVideo.UseVisualStyleBackColor = true;
@@ -152,7 +157,7 @@
             this.btnLikedListVideo.Margin = new System.Windows.Forms.Padding(6);
             this.btnLikedListVideo.Name = "btnLikedListVideo";
             this.btnLikedListVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnLikedListVideo.Size = new System.Drawing.Size(322, 45);
+            this.btnLikedListVideo.Size = new System.Drawing.Size(301, 45);
             this.btnLikedListVideo.TabIndex = 0;
             this.btnLikedListVideo.Text = "Liked list";
             this.btnLikedListVideo.UseVisualStyleBackColor = true;
@@ -172,7 +177,7 @@
             this.btnMusic.Margin = new System.Windows.Forms.Padding(6);
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMusic.Size = new System.Drawing.Size(322, 64);
+            this.btnMusic.Size = new System.Drawing.Size(301, 64);
             this.btnMusic.TabIndex = 3;
             this.btnMusic.Text = "Music";
             this.btnMusic.UseVisualStyleBackColor = true;
@@ -187,7 +192,7 @@
             this.pnVideoSubMenu.Location = new System.Drawing.Point(0, 244);
             this.pnVideoSubMenu.Margin = new System.Windows.Forms.Padding(6);
             this.pnVideoSubMenu.Name = "pnVideoSubMenu";
-            this.pnVideoSubMenu.Size = new System.Drawing.Size(322, 95);
+            this.pnVideoSubMenu.Size = new System.Drawing.Size(301, 95);
             this.pnVideoSubMenu.TabIndex = 2;
             // 
             // btnUpload
@@ -204,7 +209,7 @@
             this.btnUpload.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnUpload.Size = new System.Drawing.Size(322, 64);
+            this.btnUpload.Size = new System.Drawing.Size(301, 64);
             this.btnUpload.TabIndex = 6;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
@@ -220,14 +225,15 @@
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 531);
+            this.btnHelp.Location = new System.Drawing.Point(0, 689);
             this.btnHelp.Margin = new System.Windows.Forms.Padding(6);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(322, 64);
+            this.btnHelp.Size = new System.Drawing.Size(301, 64);
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "  Help";
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnEqualizer
             // 
@@ -239,14 +245,15 @@
             this.btnEqualizer.ForeColor = System.Drawing.Color.White;
             this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
             this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 467);
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 625);
             this.btnEqualizer.Margin = new System.Windows.Forms.Padding(6);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(322, 64);
+            this.btnEqualizer.Size = new System.Drawing.Size(301, 64);
             this.btnEqualizer.TabIndex = 5;
             this.btnEqualizer.Text = "Setting";
             this.btnEqualizer.UseVisualStyleBackColor = true;
+            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // btnExit
             // 
@@ -256,11 +263,11 @@
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(48)))), ((int)(((byte)(13)))));
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 643);
+            this.btnExit.Location = new System.Drawing.Point(0, 753);
             this.btnExit.Margin = new System.Windows.Forms.Padding(6);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(322, 57);
+            this.btnExit.Size = new System.Drawing.Size(301, 57);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Log out";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,7 +294,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(322, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(877, 50);
             this.panel1.TabIndex = 6;
@@ -298,6 +305,8 @@
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelSideMenu.Controls.Add(this.btnHelp);
             this.panelSideMenu.Controls.Add(this.btnEqualizer);
+            this.panelSideMenu.Controls.Add(this.pnSubRemove);
+            this.panelSideMenu.Controls.Add(this.btnRemove);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnUpload);
             this.panelSideMenu.Controls.Add(this.btnMusic);
@@ -310,6 +319,72 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(322, 700);
             this.panelSideMenu.TabIndex = 4;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
+            this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemove.Location = new System.Drawing.Point(0, 467);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnRemove.Size = new System.Drawing.Size(301, 64);
+            this.btnRemove.TabIndex = 10;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // pnSubRemove
+            // 
+            this.pnSubRemove.Controls.Add(this.btnRemoveMusic);
+            this.pnSubRemove.Controls.Add(this.btnRemoveVideo);
+            this.pnSubRemove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSubRemove.Location = new System.Drawing.Point(0, 531);
+            this.pnSubRemove.Name = "pnSubRemove";
+            this.pnSubRemove.Size = new System.Drawing.Size(301, 94);
+            this.pnSubRemove.TabIndex = 3;
+            // 
+            // btnRemoveVideo
+            // 
+            this.btnRemoveVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemoveVideo.FlatAppearance.BorderSize = 0;
+            this.btnRemoveVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnRemoveVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnRemoveVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveVideo.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveVideo.Location = new System.Drawing.Point(0, 0);
+            this.btnRemoveVideo.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRemoveVideo.Name = "btnRemoveVideo";
+            this.btnRemoveVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnRemoveVideo.Size = new System.Drawing.Size(301, 45);
+            this.btnRemoveVideo.TabIndex = 1;
+            this.btnRemoveVideo.Text = "Video";
+            this.btnRemoveVideo.UseVisualStyleBackColor = true;
+            this.btnRemoveVideo.Click += new System.EventHandler(this.btnRemoveVideo_Click);
+            // 
+            // btnRemoveMusic
+            // 
+            this.btnRemoveMusic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRemoveMusic.FlatAppearance.BorderSize = 0;
+            this.btnRemoveMusic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.btnRemoveMusic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
+            this.btnRemoveMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveMusic.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveMusic.Location = new System.Drawing.Point(0, 45);
+            this.btnRemoveMusic.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRemoveMusic.Name = "btnRemoveMusic";
+            this.btnRemoveMusic.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnRemoveMusic.Size = new System.Drawing.Size(301, 45);
+            this.btnRemoveMusic.TabIndex = 2;
+            this.btnRemoveMusic.Text = "Music";
+            this.btnRemoveMusic.UseVisualStyleBackColor = true;
+            this.btnRemoveMusic.Click += new System.EventHandler(this.btnRemoveMusic_Click);
             // 
             // FormUser
             // 
@@ -336,6 +411,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSideMenu.ResumeLayout(false);
+            this.pnSubRemove.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,5 +434,9 @@
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelSideMenu;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Panel pnSubRemove;
+        private System.Windows.Forms.Button btnRemoveMusic;
+        private System.Windows.Forms.Button btnRemoveVideo;
     }
 }

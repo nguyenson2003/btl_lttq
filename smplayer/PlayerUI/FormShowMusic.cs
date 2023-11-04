@@ -54,6 +54,8 @@ namespace PlayerUI
             lbVolume.Text = "100%";
             player.fullScreen = player.enableContextMenu = false;
             tbKeyPress.TabIndex = 0;
+
+            cbLists.Items.Clear();
             dataTableLists = dtBase.DocBang("select * from tblMusicList " +
                 "where UserName=N'" + Username + "'");
             cbLists.Items.Add("Tất cả");
@@ -299,11 +301,6 @@ namespace PlayerUI
             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            changePlayState();
-        }
-
         private void timer3_Tick(object sender, EventArgs e)
         {
             if (player != null)
@@ -343,6 +340,14 @@ namespace PlayerUI
 
         private void btnAddYourList_Click(object sender, EventArgs e)
         {
+            if (player != null)
+            {
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    player.Ctlcontrols.pause();
+                    btnPlay.Image = btnPauseState.Image;
+                }
+            }
             if (cbLists == null|| lbMusicList==null)
                 return;
             if (lbMusicList.Items.Count == 0)
@@ -358,12 +363,42 @@ namespace PlayerUI
             if (lbMusicList.SelectedIndex < 0 || lbMusicList.SelectedIndex >= lbMusicList.Items.Count)
                 lbMusicList.SelectedIndex = 0;
             new FormShowMusicList(Username, tbMusicName.Text,tbMusicId.Text).ShowDialog();
-            this.Refresh();
+            FormShowMusic_Load(null, null);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (player != null)
+            {
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    player.Ctlcontrols.pause();
+                    btnPlay.Image = btnPauseState.Image;
+                }
+            }
+            if (cbLists.SelectedIndex < 1)
+            {
+                MessageBox.Show("Hãy chọn 1 danh sách");
+                return;
+            }
+            string MusicId = tbMusicId.Text;
+            string ListId = dataTableLists.Rows[cbLists.SelectedIndex - 1]["ListId"].ToString();
+            dtBase.CapNhatDuLieu("delete tblMusicListDetail where " +
+                "ListId=N'" + ListId + "'and MusicId=N'" + MusicId + "'");
+            cbLists_SelectedIndexChanged(null, null);
         }
 
         private void cbLists_SelectedIndexChanged(object sender, EventArgs e)
         {
-            player.URL = "";
+            if (player != null)
+            {
+                if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+                {
+                    player.Ctlcontrols.pause();
+                    btnPlay.Image = btnPauseState.Image;
+                }
+            }
+                
             lbMusicList.Items.Clear();
             map = new Dictionary<int, int>();
             /*MusicName,Path,FullName,tblMusic.MusicId*/
@@ -378,12 +413,12 @@ namespace PlayerUI
                 }
                 return;
             }
-            string ListId = dataTableLists.Rows[cbLists.SelectedIndex]["ListId"].ToString();
-            dtMusic = dtBase.DocBang("select Path,MusicName,t2.MusicId,FullName from " +
-                "(select Path,MusicName,t1.MusicId from " +
-                "(select MusicId from tblMusicListDetail where ListId=N'"+ListId+"') t1 " +
-                "join tblMusic on tblMusic.MusicId=t1.MusicId) t2 " +
-                "join tblUser on tblUser.UserName=t2.MusicName");
+            string ListId = dataTableLists.Rows[cbLists.SelectedIndex-1]["ListId"].ToString();
+            dtMusic = dtBase.DocBang(" select Path,MusicName,t2.MusicId,FullName from " +
+                "(select Path,MusicName,t1.MusicId,UserName from (select MusicId,ListId " +
+                "from tblMusicListDetail where ListId=N'"+ListId+"') t1 join tblMusic" +
+                " on tblMusic.MusicId=t1.MusicId) t2 join tblUser " +
+                "on tblUser.UserName=t2.UserName");
             for (int i = 0; i < dtMusic.Rows.Count; i++)
             {
                 lbMusicList.Items.Add((i + 1).ToString() + ": " + dtMusic.Rows[i]["MusicName"].ToString()

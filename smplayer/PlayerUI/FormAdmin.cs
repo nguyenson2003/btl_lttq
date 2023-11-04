@@ -39,15 +39,6 @@ namespace SMPlayer
         {
 
         }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Form3());
-        }
-
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             dtBase.CapNhatDuLieu("update tblUser set isOnline=0 where tblUser.UserName=N'admin'");

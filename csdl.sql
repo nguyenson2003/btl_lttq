@@ -171,12 +171,15 @@ values(N'',N'')
 
  select Path,MusicName,t2.MusicId,FullName
  from
-	 (select Path,MusicName,t1.MusicId
+	 (select Path,MusicName,t1.MusicId,UserName
 	from 
-		(select MusicId from tblMusicListDetail
-		where ListId=N'') t1
+		(select MusicId,ListId from tblMusicListDetail
+		where ListId=N'lms63834622284') t1
 	join tblMusic on tblMusic.MusicId=t1.MusicId) t2
-join tblUser on tblUser.UserName=t2.MusicName
+join tblUser on tblUser.UserName=t2.UserName
+select * from tblMusicListDetail
+delete tblMusicListDetail
+where ListId=N''and MusicId=N''
 
 --drop csdl
 DROP TABLE dbo.tblMusicListDetail;

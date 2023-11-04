@@ -39,6 +39,7 @@
             this.tbMusicId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,9 +84,9 @@
             // 
             this.btnNewList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewList.Location = new System.Drawing.Point(259, 264);
+            this.btnNewList.Location = new System.Drawing.Point(117, 264);
             this.btnNewList.Name = "btnNewList";
-            this.btnNewList.Size = new System.Drawing.Size(136, 34);
+            this.btnNewList.Size = new System.Drawing.Size(136, 47);
             this.btnNewList.TabIndex = 4;
             this.btnNewList.Text = "New List";
             this.btnNewList.UseVisualStyleBackColor = true;
@@ -133,13 +134,25 @@
             // 
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(401, 264);
+            this.btnConfirm.Location = new System.Drawing.Point(259, 264);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(142, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(142, 47);
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(407, 264);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(142, 47);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete List";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormShowMusicList
             // 
@@ -149,6 +162,7 @@
             this.ClientSize = new System.Drawing.Size(661, 372);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnNewList);
             this.Controls.Add(this.tbMusicId);
@@ -181,5 +195,6 @@
         private System.Windows.Forms.TextBox tbMusicId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

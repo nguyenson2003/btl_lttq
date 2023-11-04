@@ -12,8 +12,6 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\bin\Debug\AxInterop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\Interop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\AxInterop.WMPLib.dll
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.csproj.ResolveComReference.cache
-D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form2.resources
-D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.Form3.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\SMPlayer.FormLogin.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormPlayVideo.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowUser.resources
@@ -25,3 +23,7 @@ D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowMusic.
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormUpload.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormNewListMusic.resources
 D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormShowMusicList.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormChangePassword.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormSetting.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormHelp.resources
+D:\Documents\GitHub\btl_lttq\smplayer\PlayerUI\obj\Debug\PlayerUI.FormRemove.resources

@@ -32,6 +32,7 @@ namespace PlayerUI
         private void hideSubMenu()
         {
             pnVideoSubMenu.Visible = false;
+            pnSubRemove.Visible= false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -122,8 +123,33 @@ namespace PlayerUI
             openChildForm(new FormUpload(UserName));
         }
 
-        
+        private void btnEqualizer_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null) activeForm.Close();
+            new FormSetting(UserName).ShowDialog();
+        }
 
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormHelp());
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pnSubRemove);
+        }
+
+        private void btnRemoveVideo_Click(object sender, EventArgs e)
+        {
+            //open form remove video
+            /*...*/
+        }
+
+        private void btnRemoveMusic_Click(object sender, EventArgs e)
+        {
+            //open form remove music
+            /*...*/
+        }
 
         public void openChildForm(System.Windows.Forms.Form childForm)
         {
