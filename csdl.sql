@@ -126,6 +126,10 @@ values(N'music11',N'user02',N'Jumper',N'\Musics\Jumper.mp3')
 
 insert into tblMusicList
 values(N'msl01',N'user01',N'list name 01')
+select * from tblUser where Username=N'user01'
+update tblUser
+set PassWord=N''
+where UserName=N''
 /*
 đoạn này để test
 */

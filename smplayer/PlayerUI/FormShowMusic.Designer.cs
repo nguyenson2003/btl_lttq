@@ -90,7 +90,7 @@
             // 
             // lbMusicList
             // 
-            this.lbMusicList.BackColor = System.Drawing.Color.Black;
+            this.lbMusicList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbMusicList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbMusicList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbMusicList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +157,9 @@
             // 
             // cbLists
             // 
+            this.cbLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.cbLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLists.ForeColor = System.Drawing.Color.White;
             this.cbLists.FormattingEnabled = true;
             this.cbLists.Location = new System.Drawing.Point(0, 183);
             this.cbLists.Name = "cbLists";
@@ -167,8 +169,10 @@
             // 
             // tbMusicName
             // 
+            this.tbMusicName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbMusicName.Enabled = false;
             this.tbMusicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicName.ForeColor = System.Drawing.Color.White;
             this.tbMusicName.Location = new System.Drawing.Point(112, 60);
             this.tbMusicName.Name = "tbMusicName";
             this.tbMusicName.Size = new System.Drawing.Size(214, 30);
@@ -186,8 +190,10 @@
             // 
             // tbMusicId
             // 
+            this.tbMusicId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbMusicId.Enabled = false;
             this.tbMusicId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicId.ForeColor = System.Drawing.Color.White;
             this.tbMusicId.Location = new System.Drawing.Point(112, 98);
             this.tbMusicId.Name = "tbMusicId";
             this.tbMusicId.Size = new System.Drawing.Size(214, 30);
@@ -196,8 +202,10 @@
             // 
             // tbFullName
             // 
+            this.tbFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbFullName.Enabled = false;
             this.tbFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFullName.ForeColor = System.Drawing.Color.White;
             this.tbFullName.Location = new System.Drawing.Point(112, 129);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(214, 30);
@@ -284,7 +292,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Controls.Add(this.btnShuffle);
             this.panel2.Controls.Add(this.lbTrack);
@@ -346,7 +354,7 @@
             // btnPlay
             // 
             this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPlay.BackColor = System.Drawing.Color.Black;
+            this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnPlay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlay.BackgroundImage")));
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.FlatAppearance.BorderSize = 0;
@@ -576,7 +584,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(992, 597);
             this.Controls.Add(this.btnRefreshStateOn1);
             this.Controls.Add(this.btnRefreshStateOn);

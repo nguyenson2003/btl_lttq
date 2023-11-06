@@ -75,7 +75,7 @@
             // 
             // btnSpeaker
             // 
-            this.btnSpeaker.BackColor = System.Drawing.Color.Black;
+            this.btnSpeaker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnSpeaker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSpeaker.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSpeaker.FlatAppearance.BorderSize = 0;
@@ -132,7 +132,7 @@
             // 
             // llbVideoName
             // 
-            this.llbVideoName.BackColor = System.Drawing.Color.Black;
+            this.llbVideoName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.llbVideoName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llbVideoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbVideoName.ForeColor = System.Drawing.Color.White;
@@ -159,7 +159,7 @@
             // 
             // llbFullName
             // 
-            this.llbFullName.BackColor = System.Drawing.Color.Black;
+            this.llbFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.llbFullName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.llbFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbFullName.LinkColor = System.Drawing.Color.White;
@@ -174,7 +174,7 @@
             // 
             // btnLikes
             // 
-            this.btnLikes.BackColor = System.Drawing.Color.Black;
+            this.btnLikes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btnLikes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLikes.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLikes.FlatAppearance.BorderSize = 0;
@@ -196,7 +196,7 @@
             // 
             // pbAvatar
             // 
-            this.pbAvatar.BackColor = System.Drawing.Color.Black;
+            this.pbAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.pbAvatar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("pbAvatar.Image")));
             this.pbAvatar.Location = new System.Drawing.Point(2, 2);

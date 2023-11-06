@@ -36,12 +36,12 @@
             // flpContain
             // 
             this.flpContain.AutoScroll = true;
-            this.flpContain.BackColor = System.Drawing.Color.Black;
+            this.flpContain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.flpContain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpContain.Location = new System.Drawing.Point(0, 0);
             this.flpContain.Margin = new System.Windows.Forms.Padding(0);
             this.flpContain.Name = "flpContain";
-            this.flpContain.Size = new System.Drawing.Size(399, 440);
+            this.flpContain.Size = new System.Drawing.Size(872, 606);
             this.flpContain.TabIndex = 0;
             // 
             // timer1
@@ -55,7 +55,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(399, 440);
+            this.ClientSize = new System.Drawing.Size(872, 606);
             this.Controls.Add(this.flpContain);
             this.Name = "FormShowVideo";
             this.Text = "FormShowVideo";

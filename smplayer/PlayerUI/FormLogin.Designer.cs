@@ -37,9 +37,7 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnSignUp = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.btnHiddenState = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
             this.btnShowState = new System.Windows.Forms.Button();
             this.btnSignUpHidden = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,8 +60,6 @@
             this.btnSignUp = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pnLogin = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
             this.btnLoginHidden = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -77,7 +73,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.llbForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,14 +104,14 @@
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
             this.pnLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(327, 557);
+            this.pnLogo.Size = new System.Drawing.Size(327, 503);
             this.pnLogo.TabIndex = 0;
             // 
             // panel22
             // 
             this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel22.Location = new System.Drawing.Point(212, 474);
+            this.panel22.Location = new System.Drawing.Point(212, 420);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(1, 100);
             this.panel22.TabIndex = 2;
@@ -140,7 +136,7 @@
             // 
             this.panel23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel23.Location = new System.Drawing.Point(156, 428);
+            this.panel23.Location = new System.Drawing.Point(156, 374);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(330, 1);
             this.panel23.TabIndex = 2;
@@ -149,7 +145,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 192);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 165);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(282, 162);
@@ -159,9 +155,8 @@
             // 
             // pnSignUp
             // 
-            this.pnSignUp.Controls.Add(this.panel15);
+            this.pnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.pnSignUp.Controls.Add(this.btnHiddenState);
-            this.pnSignUp.Controls.Add(this.panel18);
             this.pnSignUp.Controls.Add(this.btnShowState);
             this.pnSignUp.Controls.Add(this.btnSignUpHidden);
             this.pnSignUp.Controls.Add(this.panel5);
@@ -175,18 +170,9 @@
             this.pnSignUp.Location = new System.Drawing.Point(0, 0);
             this.pnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.pnSignUp.Name = "pnSignUp";
-            this.pnSignUp.Size = new System.Drawing.Size(568, 557);
+            this.pnSignUp.Size = new System.Drawing.Size(555, 503);
             this.pnSignUp.TabIndex = 1;
             this.pnSignUp.Visible = false;
-            // 
-            // panel15
-            // 
-            this.panel15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel15.Location = new System.Drawing.Point(27, 186);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(527, 1);
-            this.panel15.TabIndex = 2;
             // 
             // btnHiddenState
             // 
@@ -194,7 +180,7 @@
             this.btnHiddenState.FlatAppearance.BorderSize = 0;
             this.btnHiddenState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHiddenState.Image = ((System.Drawing.Image)(resources.GetObject("btnHiddenState.Image")));
-            this.btnHiddenState.Location = new System.Drawing.Point(21, 513);
+            this.btnHiddenState.Location = new System.Drawing.Point(14, 486);
             this.btnHiddenState.Margin = new System.Windows.Forms.Padding(2);
             this.btnHiddenState.Name = "btnHiddenState";
             this.btnHiddenState.Size = new System.Drawing.Size(34, 30);
@@ -202,22 +188,13 @@
             this.btnHiddenState.UseVisualStyleBackColor = true;
             this.btnHiddenState.Visible = false;
             // 
-            // panel18
-            // 
-            this.panel18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel18.Location = new System.Drawing.Point(27, 186);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(1, 200);
-            this.panel18.TabIndex = 2;
-            // 
             // btnShowState
             // 
             this.btnShowState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnShowState.FlatAppearance.BorderSize = 0;
             this.btnShowState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowState.Image = ((System.Drawing.Image)(resources.GetObject("btnShowState.Image")));
-            this.btnShowState.Location = new System.Drawing.Point(-17, 513);
+            this.btnShowState.Location = new System.Drawing.Point(-24, 486);
             this.btnShowState.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowState.Name = "btnShowState";
             this.btnShowState.Size = new System.Drawing.Size(34, 30);
@@ -231,7 +208,7 @@
             this.btnSignUpHidden.FlatAppearance.BorderSize = 0;
             this.btnSignUpHidden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUpHidden.Image = ((System.Drawing.Image)(resources.GetObject("btnSignUpHidden.Image")));
-            this.btnSignUpHidden.Location = new System.Drawing.Point(520, 373);
+            this.btnSignUpHidden.Location = new System.Drawing.Point(495, 345);
             this.btnSignUpHidden.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUpHidden.Name = "btnSignUpHidden";
             this.btnSignUpHidden.Size = new System.Drawing.Size(34, 30);
@@ -247,7 +224,7 @@
             this.panel5.Controls.Add(this.tbSignUpUserName);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(-7, 194);
+            this.panel5.Location = new System.Drawing.Point(-14, 167);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(556, 56);
@@ -267,7 +244,7 @@
             // tbSignUpUserName
             // 
             this.tbSignUpUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbSignUpUserName.BackColor = System.Drawing.Color.Black;
+            this.tbSignUpUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbSignUpUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSignUpUserName.ForeColor = System.Drawing.Color.White;
             this.tbSignUpUserName.Location = new System.Drawing.Point(274, 15);
@@ -312,7 +289,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(228, 101);
+            this.label2.Location = new System.Drawing.Point(221, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 39);
@@ -326,7 +303,7 @@
             this.panel13.Controls.Add(this.label6);
             this.panel13.Controls.Add(this.pictureBox4);
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Location = new System.Drawing.Point(-7, 315);
+            this.panel13.Location = new System.Drawing.Point(-14, 288);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(556, 56);
@@ -335,7 +312,7 @@
             // tbSignUpRepeat
             // 
             this.tbSignUpRepeat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbSignUpRepeat.BackColor = System.Drawing.Color.Black;
+            this.tbSignUpRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbSignUpRepeat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSignUpRepeat.ForeColor = System.Drawing.Color.White;
             this.tbSignUpRepeat.Location = new System.Drawing.Point(274, 16);
@@ -385,7 +362,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(-7, 255);
+            this.panel3.Location = new System.Drawing.Point(-14, 228);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(556, 56);
@@ -394,7 +371,7 @@
             // tbSignUpPassword
             // 
             this.tbSignUpPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbSignUpPassword.BackColor = System.Drawing.Color.Black;
+            this.tbSignUpPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbSignUpPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSignUpPassword.ForeColor = System.Drawing.Color.White;
             this.tbSignUpPassword.Location = new System.Drawing.Point(274, 16);
@@ -446,7 +423,7 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(176, 374);
+            this.btnSignUp.Location = new System.Drawing.Point(169, 347);
             this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Padding = new System.Windows.Forms.Padding(2);
@@ -463,7 +440,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(336, 479);
+            this.linkLabel2.Location = new System.Drawing.Point(308, 452);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(221, 20);
@@ -474,40 +451,21 @@
             // 
             // pnLogin
             // 
-            this.pnLogin.Controls.Add(this.panel20);
-            this.pnLogin.Controls.Add(this.panel19);
+            this.pnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.pnLogin.Controls.Add(this.btnLoginHidden);
             this.pnLogin.Controls.Add(this.panel8);
             this.pnLogin.Controls.Add(this.pnSignUp);
             this.pnLogin.Controls.Add(this.label5);
             this.pnLogin.Controls.Add(this.panel11);
             this.pnLogin.Controls.Add(this.linkLabel4);
-            this.pnLogin.Controls.Add(this.linkLabel3);
+            this.pnLogin.Controls.Add(this.llbForgotPassword);
             this.pnLogin.Controls.Add(this.btnLogin);
             this.pnLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnLogin.Location = new System.Drawing.Point(327, 0);
             this.pnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(568, 557);
+            this.pnLogin.Size = new System.Drawing.Size(555, 503);
             this.pnLogin.TabIndex = 2;
-            // 
-            // panel20
-            // 
-            this.panel20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel20.Location = new System.Drawing.Point(27, 188);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1, 150);
-            this.panel20.TabIndex = 2;
-            // 
-            // panel19
-            // 
-            this.panel19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel19.Location = new System.Drawing.Point(27, 188);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(530, 1);
-            this.panel19.TabIndex = 2;
             // 
             // btnLoginHidden
             // 
@@ -515,7 +473,7 @@
             this.btnLoginHidden.FlatAppearance.BorderSize = 0;
             this.btnLoginHidden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoginHidden.Image = ((System.Drawing.Image)(resources.GetObject("btnLoginHidden.Image")));
-            this.btnLoginHidden.Location = new System.Drawing.Point(520, 373);
+            this.btnLoginHidden.Location = new System.Drawing.Point(495, 350);
             this.btnLoginHidden.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginHidden.Name = "btnLoginHidden";
             this.btnLoginHidden.Size = new System.Drawing.Size(34, 30);
@@ -527,11 +485,12 @@
             // panel8
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.tbLoginUserName);
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.pictureBox5);
-            this.panel8.Location = new System.Drawing.Point(-7, 194);
+            this.panel8.Location = new System.Drawing.Point(-14, 167);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(556, 56);
@@ -551,7 +510,7 @@
             // tbLoginUserName
             // 
             this.tbLoginUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbLoginUserName.BackColor = System.Drawing.Color.Black;
+            this.tbLoginUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbLoginUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbLoginUserName.ForeColor = System.Drawing.Color.White;
             this.tbLoginUserName.Location = new System.Drawing.Point(274, 15);
@@ -587,7 +546,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(260, 101);
+            this.label5.Location = new System.Drawing.Point(253, 74);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 39);
@@ -601,7 +560,7 @@
             this.panel11.Controls.Add(this.label8);
             this.panel11.Controls.Add(this.pictureBox6);
             this.panel11.Controls.Add(this.panel10);
-            this.panel11.Location = new System.Drawing.Point(-7, 255);
+            this.panel11.Location = new System.Drawing.Point(-14, 228);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(556, 56);
@@ -610,7 +569,7 @@
             // tbLoginPassword
             // 
             this.tbLoginPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbLoginPassword.BackColor = System.Drawing.Color.Black;
+            this.tbLoginPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbLoginPassword.ForeColor = System.Drawing.Color.White;
             this.tbLoginPassword.Location = new System.Drawing.Point(274, 16);
@@ -660,7 +619,7 @@
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.LinkColor = System.Drawing.Color.White;
-            this.linkLabel4.Location = new System.Drawing.Point(353, 479);
+            this.linkLabel4.Location = new System.Drawing.Point(314, 455);
             this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(215, 20);
@@ -669,20 +628,21 @@
             this.linkLabel4.Text = " Not a menber? Signup now";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkSignUp);
             // 
-            // linkLabel3
+            // llbForgotPassword
             // 
-            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.linkLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkColor = System.Drawing.Color.White;
-            this.linkLabel3.Location = new System.Drawing.Point(419, 449);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(148, 20);
-            this.linkLabel3.TabIndex = 5;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = " Forgot password?";
+            this.llbForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
+            this.llbForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.llbForgotPassword.AutoSize = true;
+            this.llbForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbForgotPassword.LinkColor = System.Drawing.Color.White;
+            this.llbForgotPassword.Location = new System.Drawing.Point(381, 427);
+            this.llbForgotPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.llbForgotPassword.Name = "llbForgotPassword";
+            this.llbForgotPassword.Size = new System.Drawing.Size(148, 20);
+            this.llbForgotPassword.TabIndex = 5;
+            this.llbForgotPassword.TabStop = true;
+            this.llbForgotPassword.Text = " Forgot password?";
+            this.llbForgotPassword.Click += new System.EventHandler(this.llbForgotPassword_Click);
             // 
             // btnLogin
             // 
@@ -693,7 +653,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(176, 374);
+            this.btnLogin.Location = new System.Drawing.Point(169, 347);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(2);
@@ -708,7 +668,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(895, 557);
+            this.ClientSize = new System.Drawing.Size(882, 503);
             this.Controls.Add(this.pnLogin);
             this.Controls.Add(this.pnLogo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -755,7 +715,7 @@
         private System.Windows.Forms.Panel pnLogin;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel llbForgotPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label7;
@@ -789,11 +749,7 @@
         private System.Windows.Forms.Button btnShowState;
         private System.Windows.Forms.Button btnLoginHidden;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label2;

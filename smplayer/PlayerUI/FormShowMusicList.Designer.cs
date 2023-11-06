@@ -64,7 +64,9 @@
             // 
             // cbLists
             // 
+            this.cbLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.cbLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLists.ForeColor = System.Drawing.Color.White;
             this.cbLists.FormattingEnabled = true;
             this.cbLists.Location = new System.Drawing.Point(259, 102);
             this.cbLists.Name = "cbLists";
@@ -73,8 +75,10 @@
             // 
             // tbUsername
             // 
+            this.tbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbUsername.Enabled = false;
             this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.ForeColor = System.Drawing.Color.White;
             this.tbUsername.Location = new System.Drawing.Point(259, 58);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(284, 30);
@@ -104,8 +108,10 @@
             // 
             // tbMusicName
             // 
+            this.tbMusicName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbMusicName.Enabled = false;
             this.tbMusicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicName.ForeColor = System.Drawing.Color.White;
             this.tbMusicName.Location = new System.Drawing.Point(259, 152);
             this.tbMusicName.Name = "tbMusicName";
             this.tbMusicName.Size = new System.Drawing.Size(284, 30);
@@ -113,8 +119,10 @@
             // 
             // tbMusicId
             // 
+            this.tbMusicId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbMusicId.Enabled = false;
             this.tbMusicId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMusicId.ForeColor = System.Drawing.Color.White;
             this.tbMusicId.Location = new System.Drawing.Point(259, 201);
             this.tbMusicId.Name = "tbMusicId";
             this.tbMusicId.Size = new System.Drawing.Size(284, 30);
@@ -158,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(661, 372);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

@@ -34,7 +34,6 @@ namespace PlayerUI
                     MessageBox.Show("Cập nhập thành công");
                     FormSetting_Load(null, null);
                 }
-                    
             }
         }
 

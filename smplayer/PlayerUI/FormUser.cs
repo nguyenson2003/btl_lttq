@@ -142,13 +142,24 @@ namespace PlayerUI
         private void btnRemoveVideo_Click(object sender, EventArgs e)
         {
             //open form remove video
+            if (activeForm != null) activeForm.Close();
+            new FormRemove(UserName, 1).ShowDialog();
             /*...*/
         }
 
         private void btnRemoveMusic_Click(object sender, EventArgs e)
         {
             //open form remove music
+            if (activeForm != null) activeForm.Close();
+            new FormRemove(UserName, 0).ShowDialog();
             /*...*/
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(dtBase.DocBang("select * from tblUser where UserName=N'"+UserName+"'").Rows.Count!=0)
+                lbHello.Text ="Hello "+ dtBase.DocBang("select * from tblUser where" +
+                    " UserName=N'"+UserName+"'").Rows[0]["FullName"].ToString();
         }
 
         public void openChildForm(System.Windows.Forms.Form childForm)

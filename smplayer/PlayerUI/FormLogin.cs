@@ -190,6 +190,11 @@ namespace SMPlayer
             Application.Exit();
         }
 
+        private void llbForgotPassword_Click(object sender, EventArgs e)
+        {
+            new FormHelp().ShowDialog();
+        }
+
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             string email = tbSignUpUserName.Text;

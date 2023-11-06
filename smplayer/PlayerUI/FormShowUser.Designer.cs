@@ -42,8 +42,8 @@
             this.tbFullName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnLoginUser = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -51,7 +51,7 @@
             // 
             // dgvUser
             // 
-            this.dgvUser.BackgroundColor = System.Drawing.Color.Black;
+            this.dgvUser.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUser.GridColor = System.Drawing.Color.Black;
@@ -109,10 +109,12 @@
             // 
             // tbUserName
             // 
+            this.tbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.tbUserName.ForeColor = System.Drawing.Color.White;
             this.tbUserName.Location = new System.Drawing.Point(119, 12);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(108, 22);
-            this.tbUserName.TabIndex = 3;
+            this.tbUserName.Size = new System.Drawing.Size(188, 22);
+            this.tbUserName.TabIndex = 1;
             // 
             // label2
             // 
@@ -125,9 +127,11 @@
             // 
             // tbPassword
             // 
+            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.tbPassword.ForeColor = System.Drawing.Color.White;
             this.tbPassword.Location = new System.Drawing.Point(441, 12);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(108, 22);
+            this.tbPassword.Size = new System.Drawing.Size(175, 22);
             this.tbPassword.TabIndex = 3;
             // 
             // label3
@@ -141,6 +145,8 @@
             // 
             // tbFullName
             // 
+            this.tbFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.tbFullName.ForeColor = System.Drawing.Color.White;
             this.tbFullName.Location = new System.Drawing.Point(119, 40);
             this.tbFullName.Name = "tbFullName";
             this.tbFullName.Size = new System.Drawing.Size(188, 22);
@@ -172,12 +178,6 @@
             this.panel2.Size = new System.Drawing.Size(172, 469);
             this.panel2.TabIndex = 5;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnLoginUser
             // 
             this.btnLoginUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,11 +189,17 @@
             this.btnLoginUser.UseVisualStyleBackColor = true;
             this.btnLoginUser.Click += new System.EventHandler(this.btnLoginUser_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormShowUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(990, 543);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.panel2);

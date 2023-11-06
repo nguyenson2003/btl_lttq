@@ -66,7 +66,9 @@
             // cbObject
             // 
             this.cbObject.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbObject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.cbObject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbObject.ForeColor = System.Drawing.Color.White;
             this.cbObject.FormattingEnabled = true;
             this.cbObject.Items.AddRange(new object[] {
             "Video",
@@ -130,8 +132,10 @@
             // tbUsername
             // 
             this.tbUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbUsername.Enabled = false;
             this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.ForeColor = System.Drawing.Color.White;
             this.tbUsername.Location = new System.Drawing.Point(269, 199);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(413, 30);
@@ -140,7 +144,9 @@
             // tbVideoName
             // 
             this.tbVideoName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbVideoName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.tbVideoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbVideoName.ForeColor = System.Drawing.Color.White;
             this.tbVideoName.Location = new System.Drawing.Point(269, 256);
             this.tbVideoName.Name = "tbVideoName";
             this.tbVideoName.Size = new System.Drawing.Size(413, 30);
@@ -150,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(862, 462);
             this.Controls.Add(this.tbVideoName);
             this.Controls.Add(this.tbUsername);

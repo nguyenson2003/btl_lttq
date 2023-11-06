@@ -104,26 +104,6 @@ namespace PlayerUI
             pbVolume.Value = player.settings.volume = e.X * 100 / pbVolume.Width;
             lbVolume.Text = pbVolume.Value.ToString() + "%";
         }
-        private void changeWindowState()
-        {
-            if (this.WindowState == FormWindowState.Maximized && this.FormBorderStyle == FormBorderStyle.None)
-            {
-                this.FormBorderStyle = FormBorderStyle.Sizable;
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.FormBorderStyle = FormBorderStyle.None;
-                this.WindowState = FormWindowState.Normal;
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void btnFullScreen_Click(object sender, EventArgs e)
-        {
-            changeWindowState();
-
-        }
 
         private void btnKeyPress_KeyUp(object sender, KeyEventArgs e)
         {

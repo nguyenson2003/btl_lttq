@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnVideo = new System.Windows.Forms.Button();
-            this.btnMusic = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,8 +51,6 @@
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panelSideMenu.Controls.Add(this.btnExit);
-            this.panelSideMenu.Controls.Add(this.btnVideo);
-            this.panelSideMenu.Controls.Add(this.btnMusic);
             this.panelSideMenu.Controls.Add(this.btnUser);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -83,46 +79,6 @@
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnVideo
-            // 
-            this.btnVideo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVideo.FlatAppearance.BorderSize = 0;
-            this.btnVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.btnVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVideo.ForeColor = System.Drawing.Color.White;
-            this.btnVideo.Image = ((System.Drawing.Image)(resources.GetObject("btnVideo.Image")));
-            this.btnVideo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVideo.Location = new System.Drawing.Point(0, 227);
-            this.btnVideo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVideo.Name = "btnVideo";
-            this.btnVideo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnVideo.Size = new System.Drawing.Size(322, 56);
-            this.btnVideo.TabIndex = 6;
-            this.btnVideo.Text = "Video";
-            this.btnVideo.UseVisualStyleBackColor = true;
-            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
-            // 
-            // btnMusic
-            // 
-            this.btnMusic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMusic.FlatAppearance.BorderSize = 0;
-            this.btnMusic.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(118)))), ((int)(((byte)(191)))));
-            this.btnMusic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(38)))), ((int)(((byte)(85)))));
-            this.btnMusic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusic.ForeColor = System.Drawing.Color.White;
-            this.btnMusic.Image = ((System.Drawing.Image)(resources.GetObject("btnMusic.Image")));
-            this.btnMusic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusic.Location = new System.Drawing.Point(0, 171);
-            this.btnMusic.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMusic.Name = "btnMusic";
-            this.btnMusic.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnMusic.Size = new System.Drawing.Size(322, 56);
-            this.btnMusic.TabIndex = 3;
-            this.btnMusic.Text = "Music";
-            this.btnMusic.UseVisualStyleBackColor = true;
-            this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
             // 
             // btnUser
             // 
@@ -191,6 +147,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(322, 0);
@@ -244,8 +201,6 @@
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnVideo;
-        private System.Windows.Forms.Button btnMusic;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
