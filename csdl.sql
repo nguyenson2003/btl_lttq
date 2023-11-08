@@ -184,6 +184,10 @@ join tblUser on tblUser.UserName=t2.UserName
 select * from tblMusicListDetail
 delete tblMusicListDetail
 where ListId=N''and MusicId=N''
+delete tblMusic
+where MusicId=N''
+select * from tblVideo
+where UserName=N''
 
 --drop csdl
 DROP TABLE dbo.tblMusicListDetail;
