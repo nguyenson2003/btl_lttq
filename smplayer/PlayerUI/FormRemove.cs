@@ -53,7 +53,7 @@ namespace PlayerUI
                     "where UserName=N'"+Username+"'");
                 if(dataTable.Rows.Count == 0) {
                     MessageBox.Show("You don't have any videos");
-                    
+                    this.Close();
                 }
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
@@ -107,10 +107,13 @@ namespace PlayerUI
             {
                 if (isVideo == 1)
                 {
+                    dataProcesser.CapNhatDuLieu("delete tblVideoLikeDetail where VideoId=N'" + tbId.Text + "'");
+
                     dataProcesser.CapNhatDuLieu("delete tblVideo where VideoId=N'" + tbId.Text + "'");
                 }
                 else
                 {
+                    dataProcesser.CapNhatDuLieu("delete tblMusicListDetail where MusicId=N'" + tbId.Text + "'");
                     dataProcesser.CapNhatDuLieu("delete tblMusic where MusicId=N'" + tbId.Text + "'");
                 }
                 MessageBox.Show("Deleted successfully");

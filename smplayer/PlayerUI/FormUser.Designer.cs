@@ -66,11 +66,11 @@
             this.lbHello.AutoSize = true;
             this.lbHello.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbHello.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbHello.Location = new System.Drawing.Point(713, 0);
+            this.lbHello.Location = new System.Drawing.Point(689, 0);
             this.lbHello.Margin = new System.Windows.Forms.Padding(0);
             this.lbHello.Name = "lbHello";
             this.lbHello.Padding = new System.Windows.Forms.Padding(30, 15, 30, 10);
-            this.lbHello.Size = new System.Drawing.Size(164, 50);
+            this.lbHello.Size = new System.Drawing.Size(188, 54);
             this.lbHello.TabIndex = 0;
             this.lbHello.Text = "Hello Minh";
             this.lbHello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,7 +113,7 @@
             this.btnVideo.Margin = new System.Windows.Forms.Padding(0);
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnVideo.Size = new System.Drawing.Size(301, 64);
+            this.btnVideo.Size = new System.Drawing.Size(296, 64);
             this.btnVideo.TabIndex = 1;
             this.btnVideo.Text = "          Video";
             this.btnVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,7 +127,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(6);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(301, 180);
+            this.panelLogo.Size = new System.Drawing.Size(296, 180);
             this.panelLogo.TabIndex = 0;
             // 
             // btnOpenLocalVideo
@@ -144,7 +144,7 @@
             this.btnOpenLocalVideo.Margin = new System.Windows.Forms.Padding(6);
             this.btnOpenLocalVideo.Name = "btnOpenLocalVideo";
             this.btnOpenLocalVideo.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnOpenLocalVideo.Size = new System.Drawing.Size(301, 45);
+            this.btnOpenLocalVideo.Size = new System.Drawing.Size(296, 45);
             this.btnOpenLocalVideo.TabIndex = 3;
             this.btnOpenLocalVideo.Text = "        Open local media";
             this.btnOpenLocalVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,7 +165,7 @@
             this.btnLikedListVideo.Margin = new System.Windows.Forms.Padding(6);
             this.btnLikedListVideo.Name = "btnLikedListVideo";
             this.btnLikedListVideo.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnLikedListVideo.Size = new System.Drawing.Size(301, 45);
+            this.btnLikedListVideo.Size = new System.Drawing.Size(296, 45);
             this.btnLikedListVideo.TabIndex = 0;
             this.btnLikedListVideo.Text = "        Liked list";
             this.btnLikedListVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +186,7 @@
             this.btnMusic.Margin = new System.Windows.Forms.Padding(6);
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMusic.Size = new System.Drawing.Size(301, 64);
+            this.btnMusic.Size = new System.Drawing.Size(296, 64);
             this.btnMusic.TabIndex = 3;
             this.btnMusic.Text = "          Music";
             this.btnMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,7 +202,7 @@
             this.pnVideoSubMenu.Location = new System.Drawing.Point(0, 244);
             this.pnVideoSubMenu.Margin = new System.Windows.Forms.Padding(6);
             this.pnVideoSubMenu.Name = "pnVideoSubMenu";
-            this.pnVideoSubMenu.Size = new System.Drawing.Size(301, 95);
+            this.pnVideoSubMenu.Size = new System.Drawing.Size(296, 95);
             this.pnVideoSubMenu.TabIndex = 2;
             // 
             // btnUpload
@@ -219,7 +219,7 @@
             this.btnUpload.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnUpload.Size = new System.Drawing.Size(301, 64);
+            this.btnUpload.Size = new System.Drawing.Size(296, 64);
             this.btnUpload.TabIndex = 6;
             this.btnUpload.Text = "          Upload";
             this.btnUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@
             this.btnHelp.Margin = new System.Windows.Forms.Padding(6);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(301, 64);
+            this.btnHelp.Size = new System.Drawing.Size(296, 64);
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "          Help";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,7 +261,7 @@
             this.btnEqualizer.Margin = new System.Windows.Forms.Padding(6);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(301, 64);
+            this.btnEqualizer.Size = new System.Drawing.Size(296, 64);
             this.btnEqualizer.TabIndex = 5;
             this.btnEqualizer.Text = "          Setting";
             this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,7 +280,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(6);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(301, 57);
+            this.btnExit.Size = new System.Drawing.Size(296, 57);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Log out";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,7 +340,7 @@
             this.pnSubRemove.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSubRemove.Location = new System.Drawing.Point(0, 531);
             this.pnSubRemove.Name = "pnSubRemove";
-            this.pnSubRemove.Size = new System.Drawing.Size(301, 94);
+            this.pnSubRemove.Size = new System.Drawing.Size(296, 94);
             this.pnSubRemove.TabIndex = 3;
             // 
             // btnRemoveMusic
@@ -357,7 +357,7 @@
             this.btnRemoveMusic.Margin = new System.Windows.Forms.Padding(6);
             this.btnRemoveMusic.Name = "btnRemoveMusic";
             this.btnRemoveMusic.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnRemoveMusic.Size = new System.Drawing.Size(301, 45);
+            this.btnRemoveMusic.Size = new System.Drawing.Size(296, 45);
             this.btnRemoveMusic.TabIndex = 2;
             this.btnRemoveMusic.Text = "        Remove Music";
             this.btnRemoveMusic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,7 +378,7 @@
             this.btnRemoveVideo.Margin = new System.Windows.Forms.Padding(6);
             this.btnRemoveVideo.Name = "btnRemoveVideo";
             this.btnRemoveVideo.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnRemoveVideo.Size = new System.Drawing.Size(301, 45);
+            this.btnRemoveVideo.Size = new System.Drawing.Size(296, 45);
             this.btnRemoveVideo.TabIndex = 1;
             this.btnRemoveVideo.Text = "        Remove Video";
             this.btnRemoveVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -399,7 +399,7 @@
             this.btnRemove.Margin = new System.Windows.Forms.Padding(6);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnRemove.Size = new System.Drawing.Size(301, 64);
+            this.btnRemove.Size = new System.Drawing.Size(296, 64);
             this.btnRemove.TabIndex = 10;
             this.btnRemove.Text = "          Remove";
             this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,7 +414,7 @@
             // 
             // FormUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 700);
             this.Controls.Add(this.panelChildForm);

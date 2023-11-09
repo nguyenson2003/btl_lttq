@@ -213,5 +213,18 @@ namespace PlayerUI
             if(isConnected)
                 dgvUser.DataSource = dtBase.DocBang("Select * from tblUser");
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Files | *.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
+                dtBase.ToExcel(dgvUser, saveFileDialog.FileName);
+            }
+        }
     }
 }

@@ -216,7 +216,10 @@ namespace PlayerUI
             if (lbMusicList == null)
                 return;
             int i=lbMusicList.SelectedIndex;
-            player.URL = System.IO.Directory.GetCurrentDirectory().ToString()+ dtMusic.Rows[map[i]]["Path"].ToString();
+            if (i < 0 || i >= lbMusicList.Items.Count)
+                i= 0;
+            player.URL = System.IO.Directory.GetCurrentDirectory().ToString()+
+                dtMusic.Rows[map[i]]["Path"].ToString();
             tbFullName.Text = dtMusic.Rows[map[i]]["FullName"].ToString();
             tbMusicName.Text= dtMusic.Rows[map[i]]["MusicName"].ToString();
             tbMusicId.Text= dtMusic.Rows[map[i]]["MusicId"].ToString();
